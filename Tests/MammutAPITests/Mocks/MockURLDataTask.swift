@@ -4,7 +4,7 @@
 //
 
 import Foundation
-@testable import Mammut
+@testable import MammutAPI
 
 internal class MockURLDataTask: DataTask {
     var didCallResume = false

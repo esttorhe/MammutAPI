@@ -4,14 +4,14 @@
 //
 
 import Foundation
-@testable import Mammut
+@testable import MammutAPI
 
 class MockEndpoint: URLProviding {
-    let method: Mammut.Method
+    let method: MammutAPI.Method
     let path: String?
     let validResponseCodes: Range<Int>
 
-    init(method: Mammut.Method, path: String? = nil, validResponseCodes: Range<Int> = 200..<300) {
+    init(method: MammutAPI.Method, path: String? = nil, validResponseCodes: Range<Int> = 200..<300) {
         self.path = path
         self.method = method
         self.validResponseCodes = validResponseCodes

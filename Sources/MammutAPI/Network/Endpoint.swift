@@ -26,7 +26,6 @@ extension Endpoint: URLProviding {
     var method: Method {
         switch self {
             case .registerApp: return .post
-            default: return .get
         }
     }
 

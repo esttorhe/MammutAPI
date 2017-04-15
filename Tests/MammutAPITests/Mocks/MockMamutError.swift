@@ -4,7 +4,7 @@
 //
 
 import Foundation
-@testable import Mammut
+@testable import MammutAPI
 
 internal enum MockError: Error {
     case testError

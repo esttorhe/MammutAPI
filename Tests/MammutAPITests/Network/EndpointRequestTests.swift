@@ -4,7 +4,7 @@
 //
 
 import XCTest
-@testable import Mammut
+@testable import MammutAPI
 
 class EndpointRequestTests: XCTestCase {
     var basePath: String!
