@@ -7,7 +7,7 @@ import Foundation
 
 public enum MammutError {
 
-    public enum NetworkErrors: Error, CustomStringConvertible {
+    public enum NetworkErrors: Error, CustomStringConvertible, Equatable {
         case emptyResponse
         case serverError(/*MastodonError*/Error)
         case invalidStatusCode(URLResponse?)
@@ -21,6 +21,18 @@ public enum MammutError {
             case .invalidStatusCode: return "Server replied with an invalid/unexpected status code"
             case .invalidJSON: return "Returned data cannot be parsed into valid JSON"
             case .malformedURL: return "Provided URL is malformed or invalid"
+            }
+        }
+
+        public static func ==(lhs: NetworkErrors, rhs: NetworkErrors) -> Bool {
+            switch (lhs, rhs) {
+                case (.emptyResponse, .emptyResponse): return true
+                case (.invalidJSON, .invalidJSON): return true
+                case (.malformedURL, .malformedURL): return true
+                case (.serverError(let lhsError), .serverError(let rhsError)): return (lhsError as! NSError) == (rhsError as! NSError)
+                case (.invalidStatusCode(let lhsResponse), .invalidStatusCode(let rhsResponse)): return lhsResponse == rhsResponse
+
+                default: return false
             }
         }
     }

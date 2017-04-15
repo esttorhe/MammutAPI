@@ -1,22 +1,25 @@
 matrix:
   include:
     - os: linux
+      env:
+        - SWIFT_PATH=${PWD}/swift-3.1-RELEASE-ubuntu14.04
+        - SWIFT_PM=${PWD}/swift-package-manager
+        - SWIFT_PM_BIN=${PWD}/.build
       dist: trusty
       sudo: required
       cache:
           directories:
-                - ${PWD}/swift-3.1-RELEASE-ubuntu14.04
+                - ${SWIFT_PATH}
+                - ${SWIFT_PM}
+                - ${SWIFT_PM_BIN}
       before_install:
         - wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import -
-        - wget https://swift.org/builds/swift-3.1-release/ubuntu1404/swift-3.1-RELEASE/swift-3.1-RELEASE-ubuntu14.04.tar.gz
-        - tar xzf swift-3.1-RELEASE-ubuntu14.04.tar.gz
+        - if find "${SWIFT_PATH}" -maxdepth 0 -empty | grep -q .; then wget https://swift.org/builds/swift-3.1-release/ubuntu1404/swift-3.1-RELEASE/swift-3.1-RELEASE-ubuntu14.04.tar.gz; tar xzf swift-3.1-RELEASE-ubuntu14.04.tar.gz; fi
         - export PATH=${PWD}/swift-3.1-RELEASE-ubuntu14.04/usr/bin:"${PATH}"
       script:
-        - git clone https://github.com/apple/swift-package-manager
-        - cd swift-package-manager && git checkout 58f859a && cd ../
-        - swift-package-manager/Utilities/bootstrap
-        - ${PWD}/.build/debug/swift-build
-        - ${PWD}/.build/debug/swift-test
+        - if find "${SWIFT_PM}" -maxdepth 0 -empty | grep -q .; then git clone https://github.com/apple/swift-package-manager; cd swift-package-manager && git checkout 58f859a && cd ../; swift-package-manager/Utilities/bootstrap; fi
+        - ${SWIFT_PM_BIN}/debug/swift-build
+        - ${SWIFT_PM_BIN}/debug/swift-test
     - os: osx
       osx_image: xcode8.3
       script:

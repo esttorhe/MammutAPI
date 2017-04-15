@@ -12,8 +12,7 @@ class EndpointRequestTests: XCTestCase {
     var session: MockURLSession!
     var endpoint: MockEndpoint!
     var task: MockURLDataTask!
-    let emptyHandler: EndpointRequesting.CompletionHandler = { _ in
-    }
+    let emptyHandler: EndpointRequesting.CompletionHandler = { _ in }
 
     override func setUp() {
         super.setUp()
@@ -97,7 +96,7 @@ class EndpointRequestTests: XCTestCase {
             switch result {
             case .success: XCTFail("Should have returned malformed error")
             case .failure(let error):
-                XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL as! NSError)
+                XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL)
             }
 
             expectation.fulfill()
@@ -143,7 +142,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as! NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse)
             case .success: XCTFail("Should have return empty response")
             }
 
@@ -165,7 +164,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as! NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse)
             case .success: XCTFail("Should have return empty response")
             }
 
@@ -185,12 +184,12 @@ class EndpointRequestTests: XCTestCase {
 
         session.dataTask = task
         session.dataTaskArgs = { _, completion in
-            completion(data, response, serverError as! NSError)
+            completion(data, response, serverError)
         }
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.serverError(serverError) as! NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.serverError(serverError))
             case .success: XCTFail("Should have return a server error")
             }
 
@@ -214,7 +213,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.invalidStatusCode(response) as! NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.invalidStatusCode(response))
             case .success: XCTFail("Should have return a server error")
             }
 
@@ -225,10 +224,10 @@ class EndpointRequestTests: XCTestCase {
     }
 }
 
-// MARK: - Linux
+// MARK: Linux Support
 
-extension EndpointRequestTests: XCTestCaseProvider {
-    var allTests: [(String, () throws -> Void)] {
+extension EndpointRequestTests {
+    static var allTests: [(String, (EndpointRequestTests) -> () throws -> Void)] {
         return [
                 ("test_execute_passesDataTaskCallToSession", test_execute_passesDataTaskCallToSession),
                 ("test_execute_setsCompletionHandlerOnDataTask", test_execute_setsCompletionHandlerOnDataTask),

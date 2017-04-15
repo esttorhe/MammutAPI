@@ -6,6 +6,8 @@
 import Foundation
 @testable import MammutAPI
 
-internal enum MockError: Error {
-    case testError
+internal enum MockError {
+    static var testError: NSError {
+        return NSError(domain: "me.estebantorr.MammutAPITests", code: Int.max)
+    }
 }
