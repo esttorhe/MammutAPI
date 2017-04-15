@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/esttorhe/MammutAPI.svg?branch=master)](https://travis-ci.org/esttorhe/MammutAPI) ![](https://img.shields.io/badge/SwiftPackageManager-supported-orange.svg)
+[![Build Status](https://travis-ci.org/esttorhe/MammutAPI.svg?branch=master)](https://travis-ci.org/esttorhe/MammutAPI) ![](https://img.shields.io/badge/SwiftPackageManager-supported-orange.svg) ![](https://img.shields.io/badge/Linux-supported-blue.svg)
 
 # MammutAPI
 🐘Mastodon's Unofficial Swift Framework
