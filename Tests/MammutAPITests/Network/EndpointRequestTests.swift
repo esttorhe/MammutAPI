@@ -11,7 +11,8 @@ class EndpointRequestTests: XCTestCase {
     var session: MockURLSession!
     var endpoint: MockEndpoint!
     var task: MockURLDataTask!
-    let emptyHandler: EndpointRequesting.CompletionHandler = { _ in}
+    let emptyHandler: EndpointRequesting.CompletionHandler = { _ in
+    }
 
     override func setUp() {
         super.setUp()
@@ -35,7 +36,7 @@ class EndpointRequestTests: XCTestCase {
         XCTAssertNotNil(session.completion)
     }
 
-    func test_execute_sendsCorrectURLToDataTaskCreation() {
+    func test_execute_sendsCorrectURLToDataTaskCreation_noPath() {
         let expectation = self.expectation(description: "Sending correct URL")
         let subject = self.makeSubject(includeTaskOnSession: true)
         let expectedURL = URL(string: self.basePath)
@@ -50,23 +51,19 @@ class EndpointRequestTests: XCTestCase {
         self.waitForExpectations(timeout: 2)
     }
 
-    func test_execute_malformedURLCalls_completionHandlerWithMalformedURLError() {
-        let expectation = self.expectation(description: "execute calls completion handler")
-        let task = MockURLDataTask()
-        session.dataTask = task
-        basePath = "I am not a valid url"
+    func test_execute_sendsCorrectURLToDataTaskCreation_withPath() {
+        let extraPath = "extraPath"
+        endpoint = MockEndpoint(method: .get, path: extraPath)
+        let expectation = self.expectation(description: "Sending correct URL")
+        let subject = self.makeSubject(includeTaskOnSession: true)
+        let expectedURL = URL(string: self.basePath)?.appendingPathComponent(extraPath)
 
-        let subject = makeSubject()
-        subject.execute { result in
-
-            switch result {
-                case .success: XCTFail("Should have returned malformed error")
-                case .failure(let error):
-                    XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL as NSError)
-            }
-
+        session.dataTaskArgs = { request, _ in
+            XCTAssertEqual(expectedURL, request.url)
             expectation.fulfill()
         }
+
+        subject.execute(emptyHandler)
 
         self.waitForExpectations(timeout: 2)
     }
@@ -87,6 +84,27 @@ class EndpointRequestTests: XCTestCase {
         self.waitForExpectations(timeout: 2)
     }
 
+    func test_execute_malformedURLCalls_completionHandlerWithMalformedURLError() {
+        let expectation = self.expectation(description: "execute calls completion handler")
+        let task = MockURLDataTask()
+        session.dataTask = task
+        basePath = "I am not a valid url"
+
+        let subject = makeSubject()
+        subject.execute { result in
+
+            switch result {
+            case .success: XCTFail("Should have returned malformed error")
+            case .failure(let error):
+                XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL as NSError)
+            }
+
+            expectation.fulfill()
+        }
+
+        self.waitForExpectations(timeout: 2)
+    }
+
     func test_execute_callsCompletionHandlerWithData_success() {
         let expectation = self.expectation(description: "execute success calls completion handler")
         let task = MockURLDataTask()
@@ -101,8 +119,8 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-                case .failure(let error): XCTFail("Should have succeeded. Received error: \(error)")
-                case .success(let resultData): XCTAssertEqual(data, resultData)
+            case .failure(let error): XCTFail("Should have succeeded. Received error: \(error)")
+            case .success(let resultData): XCTAssertEqual(data, resultData)
             }
 
             expectation.fulfill()
@@ -111,14 +129,37 @@ class EndpointRequestTests: XCTestCase {
         self.waitForExpectations(timeout: 2)
     }
 
-    func test_execute_callsCompletionHandleNoData_failure() {
+    func test_execute_callsCompletionHandleResponseNoData_failure() {
+        let expectation = self.expectation(description: "execute success calls completion handler")
+        let task = MockURLDataTask()
+        let response = URLResponse(url: URL(string: "www.example.com")!, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        let subject = makeSubject()
+
+        session.dataTask = task
+        session.dataTaskArgs = { _, completion in
+            completion(nil, response, nil)
+        }
+
+        subject.execute { result in
+            switch result {
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as NSError)
+            case .success: XCTFail("Should have return empty response")
+            }
+
+            expectation.fulfill()
+        }
+
+        self.waitForExpectations(timeout: 2)
+    }
+
+    func test_execute_callsCompletionHandleNoResponse_failure() {
         let expectation = self.expectation(description: "execute success calls completion handler")
         let task = MockURLDataTask()
         let subject = makeSubject()
 
         session.dataTask = task
         session.dataTaskArgs = { _, completion in
-            completion(nil, nil, nil)
+            completion(Data(), nil, nil)
         }
 
         subject.execute { result in
@@ -157,13 +198,38 @@ class EndpointRequestTests: XCTestCase {
 
         self.waitForExpectations(timeout: 2)
     }
+
+    func test_execute_callsCompletionHandle_responseWithInvalidStatusCode_failure() {
+        let expectation = self.expectation(description: "execute success calls completion handler")
+        let task = MockURLDataTask()
+        let subject = makeSubject()
+        let data = Data()
+        let response = HTTPURLResponse(url: URL(string: "www.example.com")!, statusCode: 999, httpVersion: nil, headerFields: nil)
+
+        session.dataTask = task
+        session.dataTaskArgs = { _, completion in
+            completion(data, response, nil)
+        }
+
+        subject.execute { result in
+            switch result {
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.invalidStatusCode(response) as NSError)
+            case .success: XCTFail("Should have return a server error")
+            }
+
+            expectation.fulfill()
+        }
+
+        self.waitForExpectations(timeout: 2)
+    }
 }
 
 // MARK: - Linux
 
 #if os(Linux)
+
 extension EndpointRequestTests: XCTestCaseProvider {
-    var allTests : [(String, () throws -> Void)] {
+    var allTests: [(String, () throws -> Void)] {
         return [
                 ("test_execute_passesDataTaskCallToSession", test_execute_passesDataTaskCallToSession),
                 ("test_execute_setsCompletionHandlerOnDataTask", test_execute_setsCompletionHandlerOnDataTask),
@@ -172,10 +238,17 @@ extension EndpointRequestTests: XCTestCaseProvider {
                 ("test_execute_callsCompletionHandler", test_execute_callsCompletionHandler),
                 ("test_execute_callsCompletionHandlerWithData_success", test_execute_callsCompletionHandlerWithData_success),
                 ("test_execute_callsCompletionHandleNoData_failure", test_execute_callsCompletionHandleNoData_failure),
-                ("test_execute_callsCompletionHandle_failure", test_execute_callsCompletionHandle_failure)
+                ("test_execute_callsCompletionHandle_failure", test_execute_callsCompletionHandle_failure),
+                ("test_execute_sendsCorrectURLToDataTaskCreation_noPath", test_execute_sendsCorrectURLToDataTaskCreation_noPath),
+                ("test_execute_sendsCorrectURLToDataTaskCreation_withPath", test_execute_sendsCorrectURLToDataTaskCreation_withPath),
+                ("test_execute_callsCompletionHandler", test_execute_callsCompletionHandler),
+                ("test_execute_callsCompletionHandleResponseNoData_failure", test_execute_callsCompletionHandleResponseNoData_failure),
+                ("test_execute_callsCompletionHandleNoResponse_failure", test_execute_callsCompletionHandleNoResponse_failure),
+                ("test_execute_callsCompletionHandle_responseWithInvalidStatusCode_failure", test_execute_callsCompletionHandle_responseWithInvalidStatusCode_failure)
         ]
     }
 }
+
 #endif
 
 // MARK: - Helper test methods

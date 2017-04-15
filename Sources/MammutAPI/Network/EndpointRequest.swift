@@ -44,7 +44,7 @@ internal class EndpointRequest: EndpointRequesting {
                 // Status Code out of expected range
                 if let response = response as? HTTPURLResponse,
                    !self.endpoint.validResponseCodes.contains(response.statusCode) {
-                    completion(.failure(MammutError.NetworkErrors.invalidStatusCode(response: response) as NSError))
+                    completion(.failure(MammutError.NetworkErrors.invalidStatusCode(response) as NSError))
                     return
                 }
 

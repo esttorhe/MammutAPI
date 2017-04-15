@@ -10,7 +10,7 @@ public enum MammutError {
     public enum NetworkErrors: Error, CustomStringConvertible {
         case emptyResponse
         case serverError(/*MastodonError*/Error)
-        case invalidStatusCode(response: URLResponse?)
+        case invalidStatusCode(URLResponse?)
         case invalidJSON
         case malformedURL
 
