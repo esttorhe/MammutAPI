@@ -4,6 +4,7 @@
 //
 
 import XCTest
+import Foundation
 @testable import MammutAPI
 
 class EndpointRequestTests: XCTestCase {
@@ -96,7 +97,7 @@ class EndpointRequestTests: XCTestCase {
             switch result {
             case .success: XCTFail("Should have returned malformed error")
             case .failure(let error):
-                XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL as NSError)
+                XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL as! NSError)
             }
 
             expectation.fulfill()
@@ -142,7 +143,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as! NSError)
             case .success: XCTFail("Should have return empty response")
             }
 
@@ -164,7 +165,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse as! NSError)
             case .success: XCTFail("Should have return empty response")
             }
 
@@ -184,12 +185,12 @@ class EndpointRequestTests: XCTestCase {
 
         session.dataTask = task
         session.dataTaskArgs = { _, completion in
-            completion(data, response, serverError as NSError)
+            completion(data, response, serverError as! NSError)
         }
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.serverError(serverError) as NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.serverError(serverError) as! NSError)
             case .success: XCTFail("Should have return a server error")
             }
 
@@ -213,7 +214,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.invalidStatusCode(response) as NSError)
+            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.invalidStatusCode(response) as! NSError)
             case .success: XCTFail("Should have return a server error")
             }
 
@@ -226,18 +227,14 @@ class EndpointRequestTests: XCTestCase {
 
 // MARK: - Linux
 
-#if os(Linux)
-
 extension EndpointRequestTests: XCTestCaseProvider {
     var allTests: [(String, () throws -> Void)] {
         return [
                 ("test_execute_passesDataTaskCallToSession", test_execute_passesDataTaskCallToSession),
                 ("test_execute_setsCompletionHandlerOnDataTask", test_execute_setsCompletionHandlerOnDataTask),
-                ("test_execute_sendsCorrectURLToDataTaskCreation", test_execute_sendsCorrectURLToDataTaskCreation),
                 ("test_execute_malformedURLCalls_completionHandlerWithMalformedURLError", test_execute_malformedURLCalls_completionHandlerWithMalformedURLError),
                 ("test_execute_callsCompletionHandler", test_execute_callsCompletionHandler),
                 ("test_execute_callsCompletionHandlerWithData_success", test_execute_callsCompletionHandlerWithData_success),
-                ("test_execute_callsCompletionHandleNoData_failure", test_execute_callsCompletionHandleNoData_failure),
                 ("test_execute_callsCompletionHandle_failure", test_execute_callsCompletionHandle_failure),
                 ("test_execute_sendsCorrectURLToDataTaskCreation_noPath", test_execute_sendsCorrectURLToDataTaskCreation_noPath),
                 ("test_execute_sendsCorrectURLToDataTaskCreation_withPath", test_execute_sendsCorrectURLToDataTaskCreation_withPath),
@@ -248,8 +245,6 @@ extension EndpointRequestTests: XCTestCaseProvider {
         ]
     }
 }
-
-#endif
 
 // MARK: - Helper test methods
 

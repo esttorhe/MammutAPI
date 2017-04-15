@@ -31,26 +31,26 @@ internal class EndpointRequest: EndpointRequesting {
             let task = session.dataTask(with: urlRequest) { data, response, error in
                 // Server returned an error
                 if let error = error {
-                    completion(.failure(MammutError.NetworkErrors.serverError(error) as NSError))
+                    completion(.failure(MammutError.NetworkErrors.serverError(error) as! NSError))
                     return
                 }
 
                 // Server replied with an empty response 🤔
                 if response == nil {
-                    completion(.failure(MammutError.NetworkErrors.emptyResponse as NSError))
+                    completion(.failure(MammutError.NetworkErrors.emptyResponse as! NSError))
                     return
                 }
 
                 // Status Code out of expected range
                 if let response = response as? HTTPURLResponse,
                    !self.endpoint.validResponseCodes.contains(response.statusCode) {
-                    completion(.failure(MammutError.NetworkErrors.invalidStatusCode(response) as NSError))
+                    completion(.failure(MammutError.NetworkErrors.invalidStatusCode(response) as! NSError))
                     return
                 }
 
                 // No data returned
                 guard let data = data else {
-                    completion(.failure(MammutError.NetworkErrors.emptyResponse as NSError))
+                    completion(.failure(MammutError.NetworkErrors.emptyResponse as! NSError))
                     return
                 }
 
@@ -65,7 +65,7 @@ internal class EndpointRequest: EndpointRequesting {
 fileprivate extension EndpointRequest {
     func resolveEndpoint() -> Result<URLRequest, NSError> {
         guard let baseURL = URL(string: basePath) else {
-            return .failure(MammutError.NetworkErrors.malformedURL as NSError)
+            return .failure(MammutError.NetworkErrors.malformedURL as! NSError)
         }
 
         let url: URL
