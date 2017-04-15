@@ -159,6 +159,25 @@ class EndpointRequestTests: XCTestCase {
     }
 }
 
+// MARK: - Linux
+
+#if os(Linux)
+extension EndpointRequestTests: XCTestCaseProvider {
+    var allTests : [(String, () throws -> Void)] {
+        return [
+                ("test_execute_passesDataTaskCallToSession", test_execute_passesDataTaskCallToSession),
+                ("test_execute_setsCompletionHandlerOnDataTask", test_execute_setsCompletionHandlerOnDataTask),
+                ("test_execute_sendsCorrectURLToDataTaskCreation", test_execute_sendsCorrectURLToDataTaskCreation),
+                ("test_execute_malformedURLCalls_completionHandlerWithMalformedURLError", test_execute_malformedURLCalls_completionHandlerWithMalformedURLError),
+                ("test_execute_callsCompletionHandler", test_execute_callsCompletionHandler),
+                ("test_execute_callsCompletionHandlerWithData_success", test_execute_callsCompletionHandlerWithData_success),
+                ("test_execute_callsCompletionHandleNoData_failure", test_execute_callsCompletionHandleNoData_failure),
+                ("test_execute_callsCompletionHandle_failure", test_execute_callsCompletionHandle_failure)
+        ]
+    }
+}
+#endif
+
 // MARK: - Helper test methods
 
 fileprivate extension EndpointRequestTests {

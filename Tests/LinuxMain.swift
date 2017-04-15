@@ -1,6 +1,9 @@
+
+#if os(Linux)
 import XCTest
 @testable import MammutAPITests
 
 XCTMain([
-    testCase(MammutAPITests.allTests),
+    testCase(EndpointRequestTests.allTests),
 ])
+#endif

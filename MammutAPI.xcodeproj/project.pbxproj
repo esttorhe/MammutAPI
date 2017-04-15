@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88A3F79A1EA26AF400B92F8E /* String+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F78D1EA26AF400B92F8E /* String+Dictionary.swift */; };
-		88A3F79C1EA26AF400B92F8E /* MammutAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A3F78F1EA26AF400B92F8E /* MammutAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88A3F79F1EA26AF400B92F8E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7941EA26AF400B92F8E /* Result.swift */; };
-		88A3F7A01EA26AF400B92F8E /* MastodonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7951EA26AF400B92F8E /* MastodonError.swift */; };
-		88A3F7A11EA26AF400B92F8E /* DataTaskCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7971EA26AF400B92F8E /* DataTaskCreating.swift */; };
-		88A3F7A21EA26AF400B92F8E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7981EA26AF400B92F8E /* Endpoint.swift */; };
-		88A3F7A31EA26AF400B92F8E /* EndpointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7991EA26AF400B92F8E /* EndpointRequest.swift */; };
-		88A3F7B31EA26BBE00B92F8E /* MockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7AA1EA26BBE00B92F8E /* MockEndpoint.swift */; };
-		88A3F7B41EA26BBE00B92F8E /* MockMamutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7AB1EA26BBE00B92F8E /* MockMamutError.swift */; };
-		88A3F7B51EA26BBE00B92F8E /* MockURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7AC1EA26BBE00B92F8E /* MockURLDataTask.swift */; };
-		88A3F7B61EA26BBE00B92F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7AD1EA26BBE00B92F8E /* MockURLSession.swift */; };
-		88A3F7B71EA26BBE00B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7AF1EA26BBE00B92F8E /* EndpointRequestTests.swift */; };
+		88A3F7C51EA278DA00B92F8E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88A3F7B91EA278DA00B92F8E /* Info.plist */; };
+		88A3F7C61EA278DA00B92F8E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7BC1EA278DA00B92F8E /* Result.swift */; };
+		88A3F7C71EA278DA00B92F8E /* MammutAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A3F7BD1EA278DA00B92F8E /* MammutAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88A3F7C81EA278DA00B92F8E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7BF1EA278DA00B92F8E /* Application.swift */; };
+		88A3F7C91EA278DA00B92F8E /* MastodonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7C01EA278DA00B92F8E /* MastodonError.swift */; };
+		88A3F7CA1EA278DA00B92F8E /* DataTaskCreating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7C21EA278DA00B92F8E /* DataTaskCreating.swift */; };
+		88A3F7CB1EA278DA00B92F8E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7C31EA278DA00B92F8E /* Endpoint.swift */; };
+		88A3F7CC1EA278DA00B92F8E /* EndpointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7C41EA278DA00B92F8E /* EndpointRequest.swift */; };
+		88A3F7D81EA278E400B92F8E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88A3F7CE1EA278E400B92F8E /* Info.plist */; };
+		88A3F7DA1EA278E400B92F8E /* MockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D21EA278E400B92F8E /* MockEndpoint.swift */; };
+		88A3F7DB1EA278E400B92F8E /* MockMamutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D31EA278E400B92F8E /* MockMamutError.swift */; };
+		88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */; };
+		88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D51EA278E400B92F8E /* MockURLSession.swift */; };
+		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,24 +35,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		88A3F78D1EA26AF400B92F8E /* String+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Dictionary.swift"; sourceTree = "<group>"; };
-		88A3F78E1EA26AF400B92F8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88A3F78F1EA26AF400B92F8E /* MammutAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MammutAPI.h; sourceTree = "<group>"; };
-		88A3F7901EA26AF400B92F8E /* MammutAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MammutAPI.swift; sourceTree = "<group>"; };
-		88A3F7921EA26AF400B92F8E /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		88A3F7941EA26AF400B92F8E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		88A3F7951EA26AF400B92F8E /* MastodonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MastodonError.swift; sourceTree = "<group>"; };
-		88A3F7971EA26AF400B92F8E /* DataTaskCreating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTaskCreating.swift; sourceTree = "<group>"; };
-		88A3F7981EA26AF400B92F8E /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		88A3F7991EA26AF400B92F8E /* EndpointRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequest.swift; sourceTree = "<group>"; };
-		88A3F7A61EA26BBE00B92F8E /* apps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apps.json; sourceTree = "<group>"; };
-		88A3F7A71EA26BBE00B92F8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88A3F7A81EA26BBE00B92F8E /* MammutAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MammutAPITests.swift; sourceTree = "<group>"; };
-		88A3F7AA1EA26BBE00B92F8E /* MockEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndpoint.swift; sourceTree = "<group>"; };
-		88A3F7AB1EA26BBE00B92F8E /* MockMamutError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMamutError.swift; sourceTree = "<group>"; };
-		88A3F7AC1EA26BBE00B92F8E /* MockURLDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLDataTask.swift; sourceTree = "<group>"; };
-		88A3F7AD1EA26BBE00B92F8E /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
-		88A3F7AF1EA26BBE00B92F8E /* EndpointRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestTests.swift; sourceTree = "<group>"; };
+		88A3F7B91EA278DA00B92F8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88A3F7BC1EA278DA00B92F8E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		88A3F7BD1EA278DA00B92F8E /* MammutAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MammutAPI.h; sourceTree = "<group>"; };
+		88A3F7BF1EA278DA00B92F8E /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		88A3F7C01EA278DA00B92F8E /* MastodonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MastodonError.swift; sourceTree = "<group>"; };
+		88A3F7C21EA278DA00B92F8E /* DataTaskCreating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTaskCreating.swift; sourceTree = "<group>"; };
+		88A3F7C31EA278DA00B92F8E /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		88A3F7C41EA278DA00B92F8E /* EndpointRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequest.swift; sourceTree = "<group>"; };
+		88A3F7CE1EA278E400B92F8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88A3F7CF1EA278E400B92F8E /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		88A3F7D21EA278E400B92F8E /* MockEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndpoint.swift; sourceTree = "<group>"; };
+		88A3F7D31EA278E400B92F8E /* MockMamutError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMamutError.swift; sourceTree = "<group>"; };
+		88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLDataTask.swift; sourceTree = "<group>"; };
+		88A3F7D51EA278E400B92F8E /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestTests.swift; sourceTree = "<group>"; };
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,90 +73,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88A3F78B1EA26AF400B92F8E /* Sources */ = {
+		88A3F7B81EA278DA00B92F8E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F78C1EA26AF400B92F8E /* Extensions */,
-				88A3F78E1EA26AF400B92F8E /* Info.plist */,
-				88A3F78F1EA26AF400B92F8E /* MammutAPI.h */,
-				88A3F7901EA26AF400B92F8E /* MammutAPI.swift */,
-				88A3F7911EA26AF400B92F8E /* Models */,
-				88A3F7961EA26AF400B92F8E /* Network */,
+				88A3F7B91EA278DA00B92F8E /* Info.plist */,
+				88A3F7BA1EA278DA00B92F8E /* MammutAPI */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		88A3F78C1EA26AF400B92F8E /* Extensions */ = {
+		88A3F7BA1EA278DA00B92F8E /* MammutAPI */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F78D1EA26AF400B92F8E /* String+Dictionary.swift */,
+				88A3F7BB1EA278DA00B92F8E /* Internal */,
+				88A3F7BD1EA278DA00B92F8E /* MammutAPI.h */,
+				88A3F7BE1EA278DA00B92F8E /* Models */,
+				88A3F7C11EA278DA00B92F8E /* Network */,
 			);
-			path = Extensions;
+			path = MammutAPI;
 			sourceTree = "<group>";
 		};
-		88A3F7911EA26AF400B92F8E /* Models */ = {
+		88A3F7BB1EA278DA00B92F8E /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F7921EA26AF400B92F8E /* Application.swift */,
-				88A3F7931EA26AF400B92F8E /* Internal */,
-				88A3F7951EA26AF400B92F8E /* MastodonError.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		88A3F7931EA26AF400B92F8E /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				88A3F7941EA26AF400B92F8E /* Result.swift */,
+				88A3F7BC1EA278DA00B92F8E /* Result.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
 		};
-		88A3F7961EA26AF400B92F8E /* Network */ = {
+		88A3F7BE1EA278DA00B92F8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F7971EA26AF400B92F8E /* DataTaskCreating.swift */,
-				88A3F7981EA26AF400B92F8E /* Endpoint.swift */,
-				88A3F7991EA26AF400B92F8E /* EndpointRequest.swift */,
+				88A3F7BF1EA278DA00B92F8E /* Application.swift */,
+				88A3F7C01EA278DA00B92F8E /* MastodonError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88A3F7C11EA278DA00B92F8E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				88A3F7C21EA278DA00B92F8E /* DataTaskCreating.swift */,
+				88A3F7C31EA278DA00B92F8E /* Endpoint.swift */,
+				88A3F7C41EA278DA00B92F8E /* EndpointRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		88A3F7A41EA26BBE00B92F8E /* Tests */ = {
+		88A3F7CD1EA278E400B92F8E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F7A51EA26BBE00B92F8E /* fixtures */,
-				88A3F7A71EA26BBE00B92F8E /* Info.plist */,
-				88A3F7A81EA26BBE00B92F8E /* MammutAPITests.swift */,
-				88A3F7A91EA26BBE00B92F8E /* Mocks */,
-				88A3F7AE1EA26BBE00B92F8E /* Network */,
+				88A3F7CE1EA278E400B92F8E /* Info.plist */,
+				88A3F7CF1EA278E400B92F8E /* LinuxMain.swift */,
+				88A3F7D01EA278E400B92F8E /* MammutAPITests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		88A3F7A51EA26BBE00B92F8E /* fixtures */ = {
+		88A3F7D01EA278E400B92F8E /* MammutAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F7A61EA26BBE00B92F8E /* apps.json */,
+				88A3F7D11EA278E400B92F8E /* Mocks */,
+				88A3F7D61EA278E400B92F8E /* Network */,
 			);
-			path = fixtures;
+			path = MammutAPITests;
 			sourceTree = "<group>";
 		};
-		88A3F7A91EA26BBE00B92F8E /* Mocks */ = {
+		88A3F7D11EA278E400B92F8E /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F7AA1EA26BBE00B92F8E /* MockEndpoint.swift */,
-				88A3F7AB1EA26BBE00B92F8E /* MockMamutError.swift */,
-				88A3F7AC1EA26BBE00B92F8E /* MockURLDataTask.swift */,
-				88A3F7AD1EA26BBE00B92F8E /* MockURLSession.swift */,
+				88A3F7D21EA278E400B92F8E /* MockEndpoint.swift */,
+				88A3F7D31EA278E400B92F8E /* MockMamutError.swift */,
+				88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */,
+				88A3F7D51EA278E400B92F8E /* MockURLSession.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		88A3F7AE1EA26BBE00B92F8E /* Network */ = {
+		88A3F7D61EA278E400B92F8E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				88A3F7AF1EA26BBE00B92F8E /* EndpointRequestTests.swift */,
+				88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -174,8 +170,8 @@
 		CCF53AAD8D7DCD170D40765C = {
 			isa = PBXGroup;
 			children = (
-				88A3F78B1EA26AF400B92F8E /* Sources */,
-				88A3F7A41EA26BBE00B92F8E /* Tests */,
+				88A3F7B81EA278DA00B92F8E /* Sources */,
+				88A3F7CD1EA278E400B92F8E /* Tests */,
 				CCF53094E30BBE85245441AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,7 +183,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A3F79C1EA26AF400B92F8E /* MammutAPI.h in Headers */,
+				88A3F7C71EA278DA00B92F8E /* MammutAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A3F7D81EA278E400B92F8E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A3F7C51EA278DA00B92F8E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A3F7B31EA26BBE00B92F8E /* MockEndpoint.swift in Sources */,
-				88A3F7B41EA26BBE00B92F8E /* MockMamutError.swift in Sources */,
-				88A3F7B71EA26BBE00B92F8E /* EndpointRequestTests.swift in Sources */,
-				88A3F7B51EA26BBE00B92F8E /* MockURLDataTask.swift in Sources */,
-				88A3F7B61EA26BBE00B92F8E /* MockURLSession.swift in Sources */,
+				88A3F7DA1EA278E400B92F8E /* MockEndpoint.swift in Sources */,
+				88A3F7DB1EA278E400B92F8E /* MockMamutError.swift in Sources */,
+				88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */,
+				88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */,
+				88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A3F7A21EA26AF400B92F8E /* Endpoint.swift in Sources */,
-				88A3F7A31EA26AF400B92F8E /* EndpointRequest.swift in Sources */,
-				88A3F79A1EA26AF400B92F8E /* String+Dictionary.swift in Sources */,
-				88A3F7A01EA26AF400B92F8E /* MastodonError.swift in Sources */,
-				88A3F7A11EA26AF400B92F8E /* DataTaskCreating.swift in Sources */,
-				88A3F79F1EA26AF400B92F8E /* Result.swift in Sources */,
+				88A3F7CC1EA278DA00B92F8E /* EndpointRequest.swift in Sources */,
+				88A3F7C81EA278DA00B92F8E /* Application.swift in Sources */,
+				88A3F7C61EA278DA00B92F8E /* Result.swift in Sources */,
+				88A3F7C91EA278DA00B92F8E /* MastodonError.swift in Sources */,
+				88A3F7CA1EA278DA00B92F8E /* DataTaskCreating.swift in Sources */,
+				88A3F7CB1EA278DA00B92F8E /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
