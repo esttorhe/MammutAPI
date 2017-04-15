@@ -19,6 +19,7 @@
 		88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */; };
 		88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D51EA278E400B92F8E /* MockURLSession.swift */; };
 		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
+		CCF5388F8DEC83065D412C52 /* XCTestCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF531645398C56BACDF63B5 /* XCTestCaseProvider.swift */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLDataTask.swift; sourceTree = "<group>"; };
 		88A3F7D51EA278E400B92F8E /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestTests.swift; sourceTree = "<group>"; };
+		CCF531645398C56BACDF63B5 /* XCTestCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseProvider.swift; sourceTree = "<group>"; };
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			children = (
 				88A3F7D11EA278E400B92F8E /* Mocks */,
 				88A3F7D61EA278E400B92F8E /* Network */,
+				CCF530E8F7E8DC8C0BE1638C /* Extensions */,
 			);
 			path = MammutAPITests;
 			sourceTree = "<group>";
@@ -163,6 +166,14 @@
 				CCF532523107CE309D544695 /* MammutAPITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CCF530E8F7E8DC8C0BE1638C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCF531645398C56BACDF63B5 /* XCTestCaseProvider.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CCF53AAD8D7DCD170D40765C = {
@@ -277,6 +288,7 @@
 				88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */,
 				88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */,
 				88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */,
+				CCF5388F8DEC83065D412C52 /* XCTestCaseProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
