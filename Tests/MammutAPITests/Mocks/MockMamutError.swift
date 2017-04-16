@@ -8,7 +8,7 @@ import Foundation
 
 internal enum MockError {
     static var testError: NSError {
-        return NSError(domain: "me.estebantorr.MammutAPITests", code: Int.max)
+        return NSError(domain: "me.estebantorr.MammutAPITests", code: Int.max, userInfo: [NSLocalizedDescriptionKey: "I am an error"])
     }
 
     static var boomError: NSError {

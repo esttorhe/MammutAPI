@@ -19,7 +19,10 @@
 		88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */; };
 		88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D51EA278E400B92F8E /* MockURLSession.swift */; };
 		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
+		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
 		CCF536E90229116C06FC4DFD /* MammutErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D8C9BC33D4C40C510C /* MammutErrorTests.swift */; };
+		CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF533C630254DBF6165A4A7 /* ResultTests.swift */; };
+		CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +54,10 @@
 		88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestTests.swift; sourceTree = "<group>"; };
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF534D8C9BC33D4C40C510C /* MammutErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MammutErrorTests.swift; sourceTree = "<group>"; };
+		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
+		CCF53CA190FF5B70586ABD59 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				88A3F7C21EA278DA00B92F8E /* DataTaskCreating.swift */,
 				88A3F7C31EA278DA00B92F8E /* Endpoint.swift */,
 				88A3F7C41EA278DA00B92F8E /* EndpointRequest.swift */,
+				CCF53721DDA9CACF4DB84663 /* Endpoints */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -136,6 +143,7 @@
 				88A3F7D11EA278E400B92F8E /* Mocks */,
 				88A3F7D61EA278E400B92F8E /* Network */,
 				CCF5345694F724C3E1A29EE2 /* Models */,
+				CCF53E6781B5638FB97E995F /* Internal */,
 			);
 			path = MammutAPITests;
 			sourceTree = "<group>";
@@ -155,8 +163,17 @@
 			isa = PBXGroup;
 			children = (
 				88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */,
+				CCF530285F4B8956A7E94C4D /* Endpoints */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CCF530285F4B8956A7E94C4D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 		CCF53094E30BBE85245441AC /* Products */ = {
@@ -176,6 +193,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CCF53721DDA9CACF4DB84663 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				CCF53CA190FF5B70586ABD59 /* Timelines.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 		CCF53AAD8D7DCD170D40765C = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +208,14 @@
 				88A3F7CD1EA278E400B92F8E /* Tests */,
 				CCF53094E30BBE85245441AC /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		CCF53E6781B5638FB97E995F /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				CCF533C630254DBF6165A4A7 /* ResultTests.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +322,8 @@
 				88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */,
 				88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */,
 				CCF536E90229116C06FC4DFD /* MammutErrorTests.swift in Sources */,
+				CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */,
+				CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +337,7 @@
 				88A3F7C91EA278DA00B92F8E /* MammutAPIError.swift in Sources */,
 				88A3F7CA1EA278DA00B92F8E /* DataTaskCreating.swift in Sources */,
 				88A3F7CB1EA278DA00B92F8E /* Endpoint.swift in Sources */,
+				CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
