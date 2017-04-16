@@ -5,5 +5,6 @@ import XCTest
 
 XCTMain([
     testCase(EndpointRequestTests.allTests),
+    testCase(MammutErrorTests.allTests)
 ])
 #endif
