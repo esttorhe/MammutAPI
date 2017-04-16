@@ -28,14 +28,20 @@ extension Endpoint.Timeline: URLProviding, Equatable {
     var method: Method { return .get }
 
     var path: String? {
+        return "\(Endpoint.Timeline.timelinePath)/\(subPath)"
+    }
+
+    var validResponseCodes: Range<Int> {
+        return 200..<300
+    }
+}
+
+fileprivate extension Endpoint.Timeline {
+    var subPath: String {
         switch self {
             case .home: return "home"
             case .local: return "public"
             case .tag(let tag): return "tag/\(tag)"
         }
-    }
-
-    var validResponseCodes: Range<Int> {
-        return 200..<300
     }
 }

@@ -43,6 +43,18 @@ internal class TimelinesTests: XCTestCase {
         XCTAssertNotEqual(Endpoint.Timeline.local, Endpoint.Timeline.tag("tag"))
         XCTAssertNotEqual(Endpoint.Timeline.home, Endpoint.Timeline.tag("tag"))
     }
+
+    func test_path_isNotNil() {
+        XCTAssertNotNil(Endpoint.Timeline.local.path)
+        XCTAssertNotNil(Endpoint.Timeline.home.path)
+        XCTAssertNotNil(Endpoint.Timeline.tag("tag").path)
+    }
+
+    func test_path_containsTimelinesAsBase() {
+        XCTAssertTrue(Endpoint.Timeline.local.path!.hasPrefix(Endpoint.Timeline.timelinePath))
+        XCTAssertTrue(Endpoint.Timeline.home.path!.hasPrefix(Endpoint.Timeline.timelinePath))
+        XCTAssertTrue(Endpoint.Timeline.tag("tag").path!.hasPrefix(Endpoint.Timeline.timelinePath))
+    }
 }
 
 // MARK: - Linux Support
@@ -54,7 +66,9 @@ extension TimelinesTests {
                 ("test_casesWithNoAssociatedValueEquality_notEqual", test_casesWithNoAssociatedValueEquality_notEqual),
                 ("test_tagWithSameTextEquality_equal", test_tagWithSameTextEquality_equal),
                 ("test_tagWithDifferentTextEquality_notEqual", test_tagWithDifferentTextEquality_notEqual),
-                ("test_tagNoAssociatedTypeWithAssociatedTypeEquality_notEqual", test_tagNoAssociatedTypeWithAssociatedTypeEquality_notEqual)
+                ("test_tagNoAssociatedTypeWithAssociatedTypeEquality_notEqual", test_tagNoAssociatedTypeWithAssociatedTypeEquality_notEqual),
+                ("test_path_isNotNil", test_path_isNotNil),
+                ("test_path_containsTimelinesAsBase", test_path_containsTimelinesAsBase)
         ]
     }
 }
