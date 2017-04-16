@@ -6,7 +6,7 @@
 import Foundation
 
 internal protocol EndpointRequesting {
-    typealias CompletionHandler = (Result<Data, MammutError.NetworkErrors>) -> Void
+    typealias CompletionHandler = (Result<Data, MammutAPIError.NetworkError>) -> Void
     var basePath: String { get }
     func execute(_ completion: @escaping CompletionHandler)
 }
@@ -31,26 +31,26 @@ internal class EndpointRequest: EndpointRequesting {
             let task = session.dataTask(with: urlRequest) { data, response, error in
                 // Server returned an error
                 if let error = error {
-                    completion(.failure(MammutError.NetworkErrors.serverError(error)))
+                    completion(.failure(MammutAPIError.NetworkError.serverError(error as! NSError)))
                     return
                 }
 
                 // Server replied with an empty response 🤔
                 if response == nil {
-                    completion(.failure(MammutError.NetworkErrors.emptyResponse))
+                    completion(.failure(MammutAPIError.NetworkError.emptyResponse))
                     return
                 }
 
                 // Status Code out of expected range
                 if let response = response as? HTTPURLResponse,
                    !self.endpoint.validResponseCodes.contains(response.statusCode) {
-                    completion(.failure(MammutError.NetworkErrors.invalidStatusCode(response)))
+                    completion(.failure(MammutAPIError.NetworkError.invalidStatusCode(response)))
                     return
                 }
 
                 // No data returned
                 guard let data = data else {
-                    completion(.failure(MammutError.NetworkErrors.emptyResponse))
+                    completion(.failure(MammutAPIError.NetworkError.emptyResponse))
                     return
                 }
 
@@ -63,9 +63,9 @@ internal class EndpointRequest: EndpointRequesting {
 }
 
 fileprivate extension EndpointRequest {
-    func resolveEndpoint() -> Result<URLRequest, MammutError.NetworkErrors> {
+    func resolveEndpoint() -> Result<URLRequest, MammutAPIError.NetworkError> {
         guard let baseURL = URL(string: basePath) else {
-            return .failure(MammutError.NetworkErrors.malformedURL)
+            return .failure(MammutAPIError.NetworkError.malformedURL)
         }
 
         let url: URL

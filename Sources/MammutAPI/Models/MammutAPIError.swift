@@ -5,10 +5,10 @@
 
 import Foundation
 
-public enum MammutError {
-    public enum NetworkErrors: Error, CustomStringConvertible, Equatable {
+public enum MammutAPIError {
+    public enum NetworkError: Error, CustomStringConvertible, Equatable {
         case emptyResponse
-        case serverError(/*MastodonError*/Error)
+        case serverError(/*MastodonError*/NSError)
         case invalidStatusCode(URLResponse?)
         case invalidJSON
         case malformedURL
@@ -23,18 +23,15 @@ public enum MammutError {
             }
         }
 
-        public static func ==(lhs: NetworkErrors, rhs: NetworkErrors) -> Bool {
+        public static func ==(lhs: NetworkError, rhs: NetworkError) -> Bool {
             switch (lhs, rhs) {
                 case (.emptyResponse, .emptyResponse): return true
                 case (.invalidJSON, .invalidJSON): return true
                 case (.malformedURL, .malformedURL): return true
                 case (.serverError(let lhsError), .serverError(let rhsError)):
-                    let lhsNSError = lhsError as! NSError
-                    let rhsNSError = rhsError as! NSError
-
-                    return (lhsNSError.code == rhsNSError.code) &&
-                            (lhsNSError.domain == rhsNSError.domain) &&
-                            (lhsNSError.localizedDescription == rhsNSError.localizedDescription)
+                    return (lhsError.code == rhsError.code) &&
+                            (lhsError.domain == rhsError.domain) &&
+                            (lhsError.localizedDescription == rhsError.localizedDescription)
                 case (.invalidStatusCode(let lhsResponse), .invalidStatusCode(let rhsResponse)):
                     let lhsStatusCode = (lhsResponse as? HTTPURLResponse)?.statusCode ?? Int.min
                     let rhsStatusCode = (rhsResponse as? HTTPURLResponse)?.statusCode ?? Int.min
@@ -50,7 +47,7 @@ public enum MammutError {
     }
 }
 
-extension MammutError.NetworkErrors: CustomNSError {
+extension MammutAPIError.NetworkError: CustomNSError {
     public static var errorDomain: String { return "me.estebantorr.MammutAPI.NetworkError" }
     public var errorUserInfo: [String : Any] { return [ NSLocalizedDescriptionKey: description ] }
 
@@ -65,6 +62,11 @@ extension MammutError.NetworkErrors: CustomNSError {
     }
 }
 
-public class MastodonError: Error {
-
+extension NSError {
+    convenience init(networkError: MammutAPIError.NetworkError) {
+        self.init(
+                domain: MammutAPIError.NetworkError.errorDomain,
+                code: networkError.errorCode,
+                userInfo: networkError.errorUserInfo)
+    }
 }

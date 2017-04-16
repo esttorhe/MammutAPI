@@ -96,7 +96,7 @@ class EndpointRequestTests: XCTestCase {
             switch result {
             case .success: XCTFail("Should have returned malformed error")
             case .failure(let error):
-                XCTAssertEqual(error, MammutError.NetworkErrors.malformedURL)
+                XCTAssertEqual(error, MammutAPIError.NetworkError.malformedURL)
             }
 
             expectation.fulfill()
@@ -142,7 +142,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse)
+            case .failure(let error): XCTAssertEqual(error, MammutAPIError.NetworkError.emptyResponse)
             case .success: XCTFail("Should have return empty response")
             }
 
@@ -164,7 +164,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.emptyResponse)
+            case .failure(let error): XCTAssertEqual(error, MammutAPIError.NetworkError.emptyResponse)
             case .success: XCTFail("Should have return empty response")
             }
 
@@ -189,7 +189,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.serverError(serverError))
+            case .failure(let error): XCTAssertEqual(error, MammutAPIError.NetworkError.serverError(serverError))
             case .success: XCTFail("Should have return a server error")
             }
 
@@ -213,7 +213,7 @@ class EndpointRequestTests: XCTestCase {
 
         subject.execute { result in
             switch result {
-            case .failure(let error): XCTAssertEqual(error, MammutError.NetworkErrors.invalidStatusCode(response))
+            case .failure(let error): XCTAssertEqual(error, MammutAPIError.NetworkError.invalidStatusCode(response))
             case .success: XCTFail("Should have return a server error")
             }
 

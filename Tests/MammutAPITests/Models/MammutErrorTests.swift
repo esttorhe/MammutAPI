@@ -9,8 +9,8 @@ import XCTest
 
 internal class MammutErrorTests: XCTestCase {
     func test_casesWithoutAssociatedType_equal() {
-        var lhs: MammutError.NetworkErrors
-        var rhs: MammutError.NetworkErrors
+        var lhs: MammutAPIError.NetworkError
+        var rhs: MammutAPIError.NetworkError
 
         lhs = .malformedURL
         rhs = .malformedURL
@@ -26,8 +26,8 @@ internal class MammutErrorTests: XCTestCase {
     }
 
     func test_casesWithoutAssociatedType_notEqual() {
-        var lhs: MammutError.NetworkErrors
-        var rhs: MammutError.NetworkErrors
+        var lhs: MammutAPIError.NetworkError
+        var rhs: MammutAPIError.NetworkError
 
         lhs = .malformedURL
         rhs = .emptyResponse
@@ -44,89 +44,89 @@ internal class MammutErrorTests: XCTestCase {
 
     func test_different_invalidStatusResponse_notEqual() {
         let response = URLResponse(url: URL(string:"www.example.com")!, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-        let lhs = MammutError.NetworkErrors.invalidStatusCode(nil)
-        let rhs = MammutError.NetworkErrors.invalidStatusCode(response)
+        let lhs = MammutAPIError.NetworkError.invalidStatusCode(nil)
+        let rhs = MammutAPIError.NetworkError.invalidStatusCode(response)
         XCTAssertNotEqual(lhs, rhs)
     }
 
     func test_same_invalidStatusResponse_equal() {
         let lhsResponse = URLResponse(url: URL(string:"www.example.com")!, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
         let rhsResponse = URLResponse(url: URL(string:"www.example.com")!, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-        let lhs = MammutError.NetworkErrors.invalidStatusCode(lhsResponse)
-        let rhs = MammutError.NetworkErrors.invalidStatusCode(rhsResponse)
+        let lhs = MammutAPIError.NetworkError.invalidStatusCode(lhsResponse)
+        let rhs = MammutAPIError.NetworkError.invalidStatusCode(rhsResponse)
         XCTAssertEqual(lhs, rhs)
     }
 
     func test_different_serverError_notEqual() {
         let lhsError = MockError.testError
         let rhsError = MockError.boomError
-        let lhs = MammutError.NetworkErrors.serverError(lhsError)
-        let rhs = MammutError.NetworkErrors.serverError(rhsError)
+        let lhs = MammutAPIError.NetworkError.serverError(lhsError)
+        let rhs = MammutAPIError.NetworkError.serverError(rhsError)
         XCTAssertNotEqual(lhs, rhs)
     }
 
     func test_same_serverError_equal() {
         let lhsError = MockError.testError
         let rhsError = MockError.testError
-        let lhs = MammutError.NetworkErrors.serverError(lhsError)
-        let rhs = MammutError.NetworkErrors.serverError(rhsError)
+        let lhs = MammutAPIError.NetworkError.serverError(lhsError)
+        let rhs = MammutAPIError.NetworkError.serverError(rhsError)
         XCTAssertEqual(lhs, rhs)
     }
 
     func test_convertToNSError_setsCorrectErrorDomain() {
         let expectedErrorDomain = "me.estebantorr.MammutAPI.NetworkError"
-        let subject = MammutError.NetworkErrors.invalidJSON
-        let nsSubject = subject as! NSError
+        let subject = MammutAPIError.NetworkError.invalidJSON
+        let nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.domain, expectedErrorDomain)
     }
 
     func test_convertToNSError_setsCorrectErrorCodeForEachCase() {
-        var subject: MammutError.NetworkErrors
+        var subject: MammutAPIError.NetworkError
         var nsSubject: NSError
 
         subject = .emptyResponse
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.code, -1)
 
         subject = .serverError(MockError.testError)
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.code, -2)
 
         subject = .invalidStatusCode(nil)
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.code, -3)
 
         subject = .invalidJSON
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.code, -4)
 
         subject = .malformedURL
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.code, -5)
     }
 
     func test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase() {
-        var subject: MammutError.NetworkErrors
+        var subject: MammutAPIError.NetworkError
         var nsSubject: NSError
 
         subject = .emptyResponse
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .serverError(MockError.testError)
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .invalidStatusCode(nil)
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .invalidJSON
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .malformedURL
-        nsSubject = subject as! NSError
+        nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
     }
 }
