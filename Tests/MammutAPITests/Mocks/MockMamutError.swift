@@ -10,4 +10,8 @@ internal enum MockError {
     static var testError: NSError {
         return NSError(domain: "me.estebantorr.MammutAPITests", code: Int.max)
     }
+
+    static var boomError: NSError {
+        return NSError(domain: "me.estebantorr.MammutAPITests", code: Int.min)
+    }
 }

@@ -6,7 +6,6 @@
 import Foundation
 
 public enum MammutError {
-
     public enum NetworkErrors: Error, CustomStringConvertible, Equatable {
         case emptyResponse
         case serverError(/*MastodonError*/Error)
@@ -30,7 +29,14 @@ public enum MammutError {
                 case (.invalidJSON, .invalidJSON): return true
                 case (.malformedURL, .malformedURL): return true
                 case (.serverError(let lhsError), .serverError(let rhsError)): return (lhsError as! NSError) == (rhsError as! NSError)
-                case (.invalidStatusCode(let lhsResponse), .invalidStatusCode(let rhsResponse)): return lhsResponse == rhsResponse
+                case (.invalidStatusCode(let lhsResponse), .invalidStatusCode(let rhsResponse)):
+                    let lhsStatusCode = (lhsResponse as? HTTPURLResponse)?.statusCode ?? Int.min
+                    let rhsStatusCode = (rhsResponse as? HTTPURLResponse)?.statusCode ?? Int.min
+                    let lhsURL = lhsResponse?.url
+                    let rhsURL = rhsResponse?.url
+
+                    return (lhsStatusCode == rhsStatusCode) &&
+                            (lhsURL == rhsURL)
 
                 default: return false
             }
