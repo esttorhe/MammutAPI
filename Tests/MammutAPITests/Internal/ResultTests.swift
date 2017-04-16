@@ -33,7 +33,9 @@ internal class ResultTests: XCTestCase {
     func test_error_isFailure_returnsCorrectError() {
         subject = .failure(MockError.testError)
         XCTAssertNotNil(subject.error)
-        XCTAssertEqual(MockError.testError, subject.error!)
+        XCTAssertEqual(MockError.testError.code, subject.error!.code)
+        XCTAssertEqual(MockError.testError.domain, subject.error!.domain)
+        XCTAssertEqual(MockError.testError.localizedDescription, subject.error!.localizedDescription)
     }
 
     func test_flatMap_isFailure_returnsSameFailure() {
