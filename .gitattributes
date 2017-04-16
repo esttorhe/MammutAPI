@@ -1,0 +1,19 @@
+# compare .pbxproj files as binary and always merge as union
+*.pbxproj binary -merge=union
+
+* text=auto
+
+# git config
+.gitattributes text
+.gitignore text
+
+# misc config
+*.yml text
+
+# Documentation
+*.md text
+LICENSE text
+AUTHORS text
+
+# Ignoring files for file types on the repo
+MammutAPI.h linguist-vendored
