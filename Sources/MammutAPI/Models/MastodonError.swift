@@ -28,7 +28,13 @@ public enum MammutError {
                 case (.emptyResponse, .emptyResponse): return true
                 case (.invalidJSON, .invalidJSON): return true
                 case (.malformedURL, .malformedURL): return true
-                case (.serverError(let lhsError), .serverError(let rhsError)): return (lhsError as! NSError) == (rhsError as! NSError)
+                case (.serverError(let lhsError), .serverError(let rhsError)):
+                    let lhsNSError = lhsError as! NSError
+                    let rhsNSError = rhsError as! NSError
+
+                    return (lhsNSError.code == rhsNSError.code) &&
+                            (lhsNSError.domain == rhsNSError.domain) &&
+                            (lhsNSError.localizedDescription == rhsNSError.localizedDescription)
                 case (.invalidStatusCode(let lhsResponse), .invalidStatusCode(let rhsResponse)):
                     let lhsStatusCode = (lhsResponse as? HTTPURLResponse)?.statusCode ?? Int.min
                     let rhsStatusCode = (rhsResponse as? HTTPURLResponse)?.statusCode ?? Int.min
