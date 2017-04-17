@@ -55,3 +55,17 @@ public struct Account {
         self.headerStatic = headerStatic
     }
 }
+
+// MARK: - Equatable
+
+extension Account: Equatable {
+    public static func ==(lhs: Account, rhs: Account) -> Bool {
+        return (
+                lhs.id == rhs.id &&
+                lhs.username == rhs.username &&
+                lhs.acct == rhs.acct &&
+                lhs.displayName == rhs.displayName &&
+                lhs.createdAt == rhs.createdAt
+        )
+    }
+}

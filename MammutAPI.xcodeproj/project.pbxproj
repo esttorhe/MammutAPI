@@ -20,6 +20,7 @@
 		88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D51EA278E400B92F8E /* MockURLSession.swift */; };
 		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
 		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
+		CCF5309720BDECA73164F155 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
 		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
 		CCF536E90229116C06FC4DFD /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */; };
@@ -68,6 +69,7 @@
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
 		CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapperTests.swift; sourceTree = "<group>"; };
 		CCF538A40C31359FB3433F97 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
 		CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+MastodonTests.swift"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */,
 				CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */,
+				CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */,
 				CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */,
 				CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */,
+				CCF5309720BDECA73164F155 /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ XCTMain([
         testCase(TimelinesTests.allTests),
         testCase(MapperErrorTests.allTests),
         testCase(AccountMapperTests.allTests),
-        testCase(DateTests.allTests)
+        testCase(DateTests.allTests),
+        testCase(AccountTests.allTests)
 ])
 #endif
