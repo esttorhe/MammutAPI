@@ -8,12 +8,29 @@ import XCTest
 
 internal class MapperErrorTests: XCTestCase {
     func test_casesWithoutAssociatedType_equal() {
-        let lhs: MammutAPIError.MappingError
-        let rhs: MammutAPIError.MappingError
+        var lhs: MammutAPIError.MappingError
+        var rhs: MammutAPIError.MappingError
 
         lhs = .incompleteModel
         rhs = .incompleteModel
         XCTAssertEqual(lhs, rhs)
+
+        lhs = .invalidJSON
+        rhs = .invalidJSON
+        XCTAssertEqual(lhs, rhs)
+    }
+
+    func test_casesWithouthAssociatedType_notEqual() {
+        var lhs: MammutAPIError.MappingError
+        var rhs: MammutAPIError.MappingError
+
+        lhs = .incompleteModel
+        rhs = .invalidJSON
+        XCTAssertNotEqual(lhs, rhs)
+
+        lhs = .invalidJSON
+        rhs = .incompleteModel
+        XCTAssertNotEqual(lhs, rhs)
     }
 
     func test_convertToNSError_setsCorrectErrorDomain() {
@@ -30,6 +47,10 @@ internal class MapperErrorTests: XCTestCase {
         subject = .incompleteModel
         nsSubject = NSError(mappingError: subject)
         XCTAssertEqual(nsSubject.code, -1)
+
+        subject = .invalidJSON
+        nsSubject = NSError(mappingError: subject)
+        XCTAssertEqual(nsSubject.code, -2)
     }
 
     func test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase() {
@@ -39,10 +60,15 @@ internal class MapperErrorTests: XCTestCase {
         subject = .incompleteModel
         nsSubject = NSError(mappingError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
+
+        subject = .invalidJSON
+        nsSubject = NSError(mappingError: subject)
+        XCTAssertEqual(nsSubject.localizedDescription, subject.description)
     }
 
     func test_description_doesntReturnEmptyStrings() {
         XCTAssertGreaterThan(MammutAPIError.MappingError.incompleteModel.description.characters.count, 0)
+        XCTAssertGreaterThan(MammutAPIError.MappingError.invalidJSON.description.characters.count, 0)
     }
 }
 
@@ -55,7 +81,8 @@ extension MapperErrorTests {
                 ("test_convertToNSError_setsCorrectErrorDomain", test_convertToNSError_setsCorrectErrorDomain),
                 ("test_convertToNSError_setsCorrectErrorCodeForEachCase", test_convertToNSError_setsCorrectErrorCodeForEachCase),
                 ("test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase", test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase),
-                ("test_description_doesntReturnEmptyStrings", test_description_doesntReturnEmptyStrings)
+                ("test_description_doesntReturnEmptyStrings", test_description_doesntReturnEmptyStrings),
+                ("test_casesWithouthAssociatedType_notEqual", test_casesWithouthAssociatedType_notEqual)
         ]
     }
 }

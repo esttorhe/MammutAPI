@@ -10,7 +10,6 @@ public enum MammutAPIError {
         case emptyResponse
         case serverError(/*MastodonError*/NSError)
         case invalidStatusCode(URLResponse?)
-        case invalidJSON
         case malformedURL
 
         public var description: String {
@@ -18,7 +17,6 @@ public enum MammutAPIError {
             case .emptyResponse: return "Empty response from the server (no data)"
             case .serverError(let error): return "Server returned an error: \(error)"
             case .invalidStatusCode: return "Server replied with an invalid/unexpected status code"
-            case .invalidJSON: return "Returned data cannot be parsed into valid JSON"
             case .malformedURL: return "Provided URL is malformed or invalid"
             }
         }
@@ -26,7 +24,6 @@ public enum MammutAPIError {
         public static func ==(lhs: NetworkError, rhs: NetworkError) -> Bool {
             switch (lhs, rhs) {
                 case (.emptyResponse, .emptyResponse): return true
-                case (.invalidJSON, .invalidJSON): return true
                 case (.malformedURL, .malformedURL): return true
                 case (.serverError(let lhsError), .serverError(let rhsError)):
                     return (lhsError.code == rhsError.code) &&
@@ -56,8 +53,7 @@ extension MammutAPIError.NetworkError: CustomNSError {
         case .emptyResponse: return -1
         case .serverError: return -2
         case .invalidStatusCode: return -3
-        case .invalidJSON: return -4
-        case .malformedURL: return -5
+        case .malformedURL: return -4
         }
     }
 }

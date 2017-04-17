@@ -8,16 +8,20 @@ import Foundation
 extension MammutAPIError {
     public enum MappingError: Error, CustomStringConvertible {
         case incompleteModel
+        case invalidJSON
 
         public var description: String {
             switch self {
                 case .incompleteModel: return "JSON model was incomplete (required fields weren't present or empty)."
+                case .invalidJSON: return "Returned data cannot be parsed into valid JSON"
             }
         }
 
         public static func ==(lhs: MappingError, rhs: MappingError) -> Bool {
             switch (lhs, rhs) {
                 case (.incompleteModel, .incompleteModel): return true
+                case (.invalidJSON, .invalidJSON): return true
+                default: return false
             }
         }
     }
@@ -30,6 +34,7 @@ extension MammutAPIError.MappingError: CustomNSError {
     public var errorCode: Int {
         switch self {
         case .incompleteModel: return -1
+        case .invalidJSON: return -2
         }
     }
 }

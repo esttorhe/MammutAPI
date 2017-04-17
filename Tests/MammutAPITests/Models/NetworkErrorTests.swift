@@ -16,10 +16,6 @@ internal class NetworkErrorTests: XCTestCase {
         rhs = .malformedURL
         XCTAssertEqual(lhs, rhs)
 
-        lhs = .invalidJSON
-        rhs = .invalidJSON
-        XCTAssertEqual(lhs, rhs)
-
         lhs = .emptyResponse
         rhs = .emptyResponse
         XCTAssertEqual(lhs, rhs)
@@ -33,12 +29,8 @@ internal class NetworkErrorTests: XCTestCase {
         rhs = .emptyResponse
         XCTAssertNotEqual(lhs, rhs)
 
-        lhs = .malformedURL
-        rhs = .invalidJSON
-        XCTAssertNotEqual(lhs, rhs)
-
         lhs = .emptyResponse
-        rhs = .invalidJSON
+        rhs = .malformedURL
         XCTAssertNotEqual(lhs, rhs)
     }
 
@@ -75,7 +67,7 @@ internal class NetworkErrorTests: XCTestCase {
 
     func test_convertToNSError_setsCorrectErrorDomain() {
         let expectedErrorDomain = "me.estebantorr.MammutAPI.NetworkError"
-        let subject = MammutAPIError.NetworkError.invalidJSON
+        let subject = MammutAPIError.NetworkError.malformedURL
         let nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.domain, expectedErrorDomain)
     }
@@ -96,13 +88,9 @@ internal class NetworkErrorTests: XCTestCase {
         nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.code, -3)
 
-        subject = .invalidJSON
-        nsSubject = NSError(networkError: subject)
-        XCTAssertEqual(nsSubject.code, -4)
-
         subject = .malformedURL
         nsSubject = NSError(networkError: subject)
-        XCTAssertEqual(nsSubject.code, -5)
+        XCTAssertEqual(nsSubject.code, -4)
     }
 
     func test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase() {
@@ -121,10 +109,6 @@ internal class NetworkErrorTests: XCTestCase {
         nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
-        subject = .invalidJSON
-        nsSubject = NSError(networkError: subject)
-        XCTAssertEqual(nsSubject.localizedDescription, subject.description)
-
         subject = .malformedURL
         nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
@@ -133,7 +117,6 @@ internal class NetworkErrorTests: XCTestCase {
     func test_description_doesntReturnEmptyStrings() {
         XCTAssertGreaterThan(MammutAPIError.NetworkError.emptyResponse.description.characters.count, 0)
         XCTAssertGreaterThan(MammutAPIError.NetworkError.malformedURL.description.characters.count, 0)
-        XCTAssertGreaterThan(MammutAPIError.NetworkError.invalidJSON.description.characters.count, 0)
         XCTAssertGreaterThan(MammutAPIError.NetworkError.invalidStatusCode(nil).description.characters.count, 0)
         XCTAssertGreaterThan(MammutAPIError.NetworkError.serverError(MockError.testError).description.characters.count, 0)
     }
