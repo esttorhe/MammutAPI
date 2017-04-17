@@ -8,6 +8,7 @@ XCTMain([
         testCase(NetworkErrorTests.allTests),
         testCase(ResultTests.allTests),
         testCase(TimelinesTests.allTests),
-        testCase(MapperErrorTests.allTests)
+        testCase(MapperErrorTests.allTests),
+        testCase(DateTests.allTests)
 ])
 #endif

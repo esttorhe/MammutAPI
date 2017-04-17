@@ -21,6 +21,7 @@
 		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
 		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
+		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
 		CCF536E90229116C06FC4DFD /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */; };
 		CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF533C630254DBF6165A4A7 /* ResultTests.swift */; };
 		CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AE183E794A1FD85F274 /* Fixture.swift */; };
@@ -28,6 +29,7 @@
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
 		CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53C06A02FC5A839D9911E /* Account.json */; };
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
+		CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */; };
 		CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53EB6959D0311677F12FB /* IncompleteJSON.json */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +63,10 @@
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
+		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
 		CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
 		CCF538A40C31359FB3433F97 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
+		CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+MastodonTests.swift"; sourceTree = "<group>"; };
 		CCF53AE183E794A1FD85F274 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
 		CCF53C06A02FC5A839D9911E /* Account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account.json; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				88A3F7BC1EA278DA00B92F8E /* Result.swift */,
+				CCF53506DEC451116315F720 /* Extensions */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -214,6 +219,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CCF53506DEC451116315F720 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCF535F45A994FA80A8BA8AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CCF53721DDA9CACF4DB84663 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +267,7 @@
 				CCF533C630254DBF6165A4A7 /* ResultTests.swift */,
 				CCF53AE183E794A1FD85F274 /* Fixture.swift */,
 				CCF53ABB1E8CEA7FA02FA331 /* Fixtures */,
+				CCF535F45A994FA80A8BA8AD /* Extensions */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -360,6 +382,7 @@
 				CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */,
 				CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */,
 				CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */,
+				CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +398,7 @@
 				88A3F7CB1EA278DA00B92F8E /* Endpoint.swift in Sources */,
 				CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */,
 				CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */,
+				CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
