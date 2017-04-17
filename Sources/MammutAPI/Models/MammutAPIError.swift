@@ -45,7 +45,7 @@ public enum MammutAPIError {
 }
 
 extension MammutAPIError.NetworkError: CustomNSError {
-    public static var errorDomain: String { return "me.estebantorr.MammutAPI.NetworkError" }
+    public static var errorDomain: String { return "es.estebantorr.MammutAPI.NetworkError" }
     public var errorUserInfo: [String : Any] { return [ NSLocalizedDescriptionKey: description ] }
 
     public var errorCode: Int {
@@ -58,11 +58,4 @@ extension MammutAPIError.NetworkError: CustomNSError {
     }
 }
 
-extension NSError {
-    convenience init(networkError: MammutAPIError.NetworkError) {
-        self.init(
-                domain: MammutAPIError.NetworkError.errorDomain,
-                code: networkError.errorCode,
-                userInfo: networkError.errorUserInfo)
-    }
-}
+

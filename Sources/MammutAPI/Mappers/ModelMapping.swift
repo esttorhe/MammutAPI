@@ -28,7 +28,7 @@ extension MammutAPIError {
 }
 
 extension MammutAPIError.MappingError: CustomNSError {
-    public static var errorDomain: String { return "me.estebantorr.MammutAPI.MappingError" }
+    public static var errorDomain: String { return "es.estebantorr.MammutAPI.MappingError" }
     public var errorUserInfo: [String : Any] { return [ NSLocalizedDescriptionKey: description ] }
 
     public var errorCode: Int {
@@ -36,15 +36,6 @@ extension MammutAPIError.MappingError: CustomNSError {
         case .incompleteModel: return -1
         case .invalidJSON: return -2
         }
-    }
-}
-
-extension NSError {
-    convenience init(mappingError: MammutAPIError.MappingError) {
-        self.init(
-                domain: MammutAPIError.MappingError.errorDomain,
-                code: mappingError.errorCode,
-                userInfo: mappingError.errorUserInfo)
     }
 }
 

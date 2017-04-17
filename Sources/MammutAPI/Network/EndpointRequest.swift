@@ -31,7 +31,19 @@ internal class EndpointRequest: EndpointRequesting {
             let task = session.dataTask(with: urlRequest) { data, response, error in
                 // Server returned an error
                 if let error = error {
-                    completion(.failure(MammutAPIError.NetworkError.serverError(error as! NSError)))
+#if os(Linux)
+                    // Had to add this because on Linux the build fails unless when casting Error to NSError
+                    // unless forced casting it
+                    if let error = error as? NSError {
+                        completion(.failure(MammutAPIError.NetworkError.serverError(error)))
+                    } else {
+                        let underlyingError = NSError(error: error)
+                        completion(.failure(MammutAPIError.NetworkError.serverError(underlyingError)))
+                    }
+#else
+                    completion(.failure(MammutAPIError.NetworkError.serverError(error as NSError)))
+#endif
+
                     return
                 }
 

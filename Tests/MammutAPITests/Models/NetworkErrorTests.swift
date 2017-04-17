@@ -66,9 +66,9 @@ internal class NetworkErrorTests: XCTestCase {
     }
 
     func test_convertToNSError_setsCorrectErrorDomain() {
-        let expectedErrorDomain = "me.estebantorr.MammutAPI.NetworkError"
+        let expectedErrorDomain = "es.estebantorr.MammutAPI.NetworkError"
         let subject = MammutAPIError.NetworkError.malformedURL
-        let nsSubject = NSError(networkError: subject)
+        let nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.domain, expectedErrorDomain)
     }
 
@@ -77,19 +77,19 @@ internal class NetworkErrorTests: XCTestCase {
         var nsSubject: NSError
 
         subject = .emptyResponse
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.code, -1)
 
         subject = .serverError(MockError.testError)
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.code, -2)
 
         subject = .invalidStatusCode(nil)
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.code, -3)
 
         subject = .malformedURL
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.code, -4)
     }
 
@@ -98,19 +98,19 @@ internal class NetworkErrorTests: XCTestCase {
         var nsSubject: NSError
 
         subject = .emptyResponse
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .serverError(MockError.testError)
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .invalidStatusCode(nil)
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .malformedURL
-        nsSubject = NSError(networkError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
     }
 

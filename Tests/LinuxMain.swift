@@ -7,6 +7,7 @@ XCTMain([
         // Error
         testCase(NetworkErrorTests.allTests),
         testCase(MapperErrorTests.allTests),
+        testCase(NSErrorConvertibleTests.allTest),
         // Endpoint
         testCase(EndpointRequestTests.allTests),
         testCase(TimelinesTests.allTests),
