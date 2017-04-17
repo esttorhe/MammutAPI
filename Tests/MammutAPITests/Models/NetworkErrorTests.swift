@@ -7,7 +7,7 @@ import Foundation
 @testable import MammutAPI
 import XCTest
 
-internal class MammutErrorTests: XCTestCase {
+internal class NetworkErrorTests: XCTestCase {
     func test_casesWithoutAssociatedType_equal() {
         var lhs: MammutAPIError.NetworkError
         var rhs: MammutAPIError.NetworkError
@@ -129,12 +129,20 @@ internal class MammutErrorTests: XCTestCase {
         nsSubject = NSError(networkError: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
     }
+
+    func test_description_doesntReturnEmptyStrings() {
+        XCTAssertGreaterThan(MammutAPIError.NetworkError.emptyResponse.description.characters.count, 0)
+        XCTAssertGreaterThan(MammutAPIError.NetworkError.malformedURL.description.characters.count, 0)
+        XCTAssertGreaterThan(MammutAPIError.NetworkError.invalidJSON.description.characters.count, 0)
+        XCTAssertGreaterThan(MammutAPIError.NetworkError.invalidStatusCode(nil).description.characters.count, 0)
+        XCTAssertGreaterThan(MammutAPIError.NetworkError.serverError(MockError.testError).description.characters.count, 0)
+    }
 }
 
 // MARK: Linux Support
 
-extension MammutErrorTests {
-    static var allTests: [(String, (MammutErrorTests) -> () throws -> Void)] {
+extension NetworkErrorTests {
+    static var allTests: [(String, (NetworkErrorTests) -> () throws -> Void)] {
         return [
                 ("test_casesWithoutAssociatedType_equal", test_casesWithoutAssociatedType_equal),
                 ("test_casesWithoutAssociatedType_notEqual", test_casesWithoutAssociatedType_notEqual),
@@ -144,7 +152,8 @@ extension MammutErrorTests {
                 ("test_same_serverError_equal", test_same_serverError_equal),
                 ("test_convertToNSError_setsCorrectErrorDomain", test_convertToNSError_setsCorrectErrorDomain),
                 ("test_convertToNSError_setsCorrectErrorCodeForEachCase", test_convertToNSError_setsCorrectErrorCodeForEachCase),
-                ("test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase", test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase)
+                ("test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase", test_convertToNSError_setsCorrectLocalizedDescriptionForEachCase),
+                ("test_description_doesntReturnEmptyStrings", test_description_doesntReturnEmptyStrings)
         ]
     }
 }

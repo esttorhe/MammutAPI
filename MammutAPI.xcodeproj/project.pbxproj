@@ -20,10 +20,12 @@
 		88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D51EA278E400B92F8E /* MockURLSession.swift */; };
 		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
 		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
-		CCF536E90229116C06FC4DFD /* MammutErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D8C9BC33D4C40C510C /* MammutErrorTests.swift */; };
+		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
+		CCF536E90229116C06FC4DFD /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */; };
 		CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF533C630254DBF6165A4A7 /* ResultTests.swift */; };
 		CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
+		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +54,12 @@
 		88A3F7D41EA278E400B92F8E /* MockURLDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLDataTask.swift; sourceTree = "<group>"; };
 		88A3F7D51EA278E400B92F8E /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestTests.swift; sourceTree = "<group>"; };
+		CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperErrorTests.swift; sourceTree = "<group>"; };
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
-		CCF534D8C9BC33D4C40C510C /* MammutErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MammutErrorTests.swift; sourceTree = "<group>"; };
+		CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		CCF538A40C31359FB3433F97 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
 		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
 		CCF53CA190FF5B70586ABD59 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +99,7 @@
 				88A3F7BD1EA278DA00B92F8E /* MammutAPI.h */,
 				88A3F7BE1EA278DA00B92F8E /* Models */,
 				88A3F7C11EA278DA00B92F8E /* Network */,
+				CCF53070AF160D8D349611B0 /* Mappers */,
 			);
 			path = MammutAPI;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				88A3F7D61EA278E400B92F8E /* Network */,
 				CCF5345694F724C3E1A29EE2 /* Models */,
 				CCF53E6781B5638FB97E995F /* Internal */,
+				CCF53ED15CEC8E80C3118390 /* Mappers */,
 			);
 			path = MammutAPITests;
 			sourceTree = "<group>";
@@ -176,6 +182,14 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		CCF53070AF160D8D349611B0 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				CCF538A40C31359FB3433F97 /* ModelMapping.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
 		CCF53094E30BBE85245441AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +202,8 @@
 		CCF5345694F724C3E1A29EE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CCF534D8C9BC33D4C40C510C /* MammutErrorTests.swift */,
+				CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */,
+				CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,9 +336,10 @@
 				88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */,
 				88A3F7DC1EA278E400B92F8E /* MockURLDataTask.swift in Sources */,
 				88A3F7DD1EA278E400B92F8E /* MockURLSession.swift in Sources */,
-				CCF536E90229116C06FC4DFD /* MammutErrorTests.swift in Sources */,
+				CCF536E90229116C06FC4DFD /* NetworkErrorTests.swift in Sources */,
 				CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */,
 				CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */,
+				CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +354,7 @@
 				88A3F7CA1EA278DA00B92F8E /* DataTaskCreating.swift in Sources */,
 				88A3F7CB1EA278DA00B92F8E /* Endpoint.swift in Sources */,
 				CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */,
+				CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
