@@ -55,6 +55,18 @@ internal class TimelinesTests: XCTestCase {
         XCTAssertTrue(Endpoint.Timeline.home.path!.hasPrefix(Endpoint.Timeline.timelinePath))
         XCTAssertTrue(Endpoint.Timeline.tag("tag").path!.hasPrefix(Endpoint.Timeline.timelinePath))
     }
+
+    func test_method_inAllCases_isGet() {
+        XCTAssertEqual(Method.get, Endpoint.Timeline.local.method)
+        XCTAssertEqual(Method.get, Endpoint.Timeline.home.method)
+        XCTAssertEqual(Method.get, Endpoint.Timeline.tag("tag").method)
+    }
+
+    func test_validResponseCodes_inAllCases_isRangeBetween200_300() {
+        XCTAssertEqual(200..<300, Endpoint.Timeline.local.validResponseCodes)
+        XCTAssertEqual(200..<300, Endpoint.Timeline.home.validResponseCodes)
+        XCTAssertEqual(200..<300, Endpoint.Timeline.tag("tag").validResponseCodes)
+    }
 }
 
 // MARK: - Linux Support
@@ -68,7 +80,9 @@ extension TimelinesTests {
                 ("test_tagWithDifferentTextEquality_notEqual", test_tagWithDifferentTextEquality_notEqual),
                 ("test_tagNoAssociatedTypeWithAssociatedTypeEquality_notEqual", test_tagNoAssociatedTypeWithAssociatedTypeEquality_notEqual),
                 ("test_path_isNotNil", test_path_isNotNil),
-                ("test_path_containsTimelinesAsBase", test_path_containsTimelinesAsBase)
+                ("test_path_containsTimelinesAsBase", test_path_containsTimelinesAsBase),
+                ("test_method_inAllCases_isGet", test_method_inAllCases_isGet),
+                ("test_validResponseCodes_inAllCases_isRangeBetween200_300", test_validResponseCodes_inAllCases_isRangeBetween200_300)
         ]
     }
 }
