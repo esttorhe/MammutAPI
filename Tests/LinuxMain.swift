@@ -1,16 +1,23 @@
-
 #if os(Linux)
+
 import XCTest
 @testable import MammutAPITests
 
 XCTMain([
-        testCase(EndpointRequestTests.allTests),
+        // Error
         testCase(NetworkErrorTests.allTests),
-        testCase(ResultTests.allTests),
-        testCase(TimelinesTests.allTests),
         testCase(MapperErrorTests.allTests),
-        testCase(AccountMapperTests.allTests),
+        // Endpoint
+        testCase(EndpointRequestTests.allTests),
+        testCase(TimelinesTests.allTests),
+        // Internal/Helper
+        testCase(ResultTests.allTests),
         testCase(DateTests.allTests),
-        testCase(AccountTests.allTests)
+        // Mappers
+        testCase(AccountMapperTests.allTests),
+        testCase(StatusMapperTests.allTests),
+        // Models
+        testCase(AccountTests.allTests),
+        testCase(StatusTests.allTests)
 ])
 #endif

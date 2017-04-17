@@ -22,12 +22,18 @@
 		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
 		CCF5309720BDECA73164F155 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
+		CCF53541EB2CBEC21ACC2D72 /* StatusVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */; };
 		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
+		CCF536C68992A23D3ADC74AA /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF535E7A2E2DE58EB936076 /* Status.swift */; };
 		CCF536E90229116C06FC4DFD /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */; };
+		CCF536F06311461100568C8F /* StatusMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B2DEC0094DF81956C6A /* StatusMapperTests.swift */; };
 		CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF533C630254DBF6165A4A7 /* ResultTests.swift */; };
+		CCF537CCA1EE3BD98F62B001 /* Status.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53D8519F38897D62FDA17 /* Status.json */; };
 		CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AE183E794A1FD85F274 /* Fixture.swift */; };
 		CCF538B44F839AF271078B5D /* AccountMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */; };
+		CCF539B2DD73A39EDB284A5C /* StatusMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53C7546ECE868F8917D84 /* StatusMapper.swift */; };
 		CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */; };
+		CCF53A872DEF8FCFF5DF72F3 /* StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53252BCF40A0E94A93D40 /* StatusTests.swift */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
 		CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53C06A02FC5A839D9911E /* Account.json */; };
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
@@ -66,19 +72,25 @@
 		CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperErrorTests.swift; sourceTree = "<group>"; };
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF53252BCF40A0E94A93D40 /* StatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
+		CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusVisibility.swift; sourceTree = "<group>"; };
 		CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		CCF535E7A2E2DE58EB936076 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapperTests.swift; sourceTree = "<group>"; };
 		CCF538A40C31359FB3433F97 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
 		CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+MastodonTests.swift"; sourceTree = "<group>"; };
 		CCF53AE183E794A1FD85F274 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
+		CCF53B2DEC0094DF81956C6A /* StatusMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapperTests.swift; sourceTree = "<group>"; };
 		CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapper.swift; sourceTree = "<group>"; };
 		CCF53C06A02FC5A839D9911E /* Account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account.json; sourceTree = "<group>"; };
+		CCF53C7546ECE868F8917D84 /* StatusMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapper.swift; sourceTree = "<group>"; };
 		CCF53CA190FF5B70586ABD59 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
 		CCF53D6D7A500B9EFDF80E5E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CCF53D8519F38897D62FDA17 /* Status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Status.json; sourceTree = "<group>"; };
 		CCF53EB6959D0311677F12FB /* IncompleteJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +148,8 @@
 			children = (
 				88A3F7BF1EA278DA00B92F8E /* Application.swift */,
 				88A3F7C01EA278DA00B92F8E /* MammutAPIError.swift */,
+				CCF535E7A2E2DE58EB936076 /* Status.swift */,
+				CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */,
 				CCF53D6D7A500B9EFDF80E5E /* Account.swift */,
 			);
 			path = Models;
@@ -207,6 +221,7 @@
 			children = (
 				CCF538A40C31359FB3433F97 /* ModelMapping.swift */,
 				CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */,
+				CCF53C7546ECE868F8917D84 /* StatusMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -226,6 +241,7 @@
 				CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */,
 				CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */,
 				CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */,
+				CCF53252BCF40A0E94A93D40 /* StatusTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +284,7 @@
 			children = (
 				CCF53C06A02FC5A839D9911E /* Account.json */,
 				CCF53EB6959D0311677F12FB /* IncompleteJSON.json */,
+				CCF53D8519F38897D62FDA17 /* Status.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -287,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */,
+				CCF53B2DEC0094DF81956C6A /* StatusMapperTests.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -374,6 +392,7 @@
 			files = (
 				CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */,
 				CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */,
+				CCF537CCA1EE3BD98F62B001 /* Status.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +422,9 @@
 				CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */,
 				CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */,
 				CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */,
+				CCF536F06311461100568C8F /* StatusMapperTests.swift in Sources */,
 				CCF5309720BDECA73164F155 /* AccountTests.swift in Sources */,
+				CCF53A872DEF8FCFF5DF72F3 /* StatusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,10 +439,13 @@
 				88A3F7CA1EA278DA00B92F8E /* DataTaskCreating.swift in Sources */,
 				88A3F7CB1EA278DA00B92F8E /* Endpoint.swift in Sources */,
 				CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */,
+				CCF536C68992A23D3ADC74AA /* Status.swift in Sources */,
+				CCF53541EB2CBEC21ACC2D72 /* StatusVisibility.swift in Sources */,
 				CCF53F778F9FEBB166E2C143 /* Account.swift in Sources */,
 				CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */,
 				CCF53E849B74D422A1BA268F /* AccountMapper.swift in Sources */,
 				CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */,
+				CCF539B2DD73A39EDB284A5C /* StatusMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
