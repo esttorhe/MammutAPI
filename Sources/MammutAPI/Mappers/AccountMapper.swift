@@ -7,12 +7,17 @@ import Foundation
 
 internal class AccountMapper: ModelMapping {
     typealias Model = Account
+
     func map(data: Data) -> Result<Model, MammutAPIError.MappingError> {
         guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
               let json = jsonObject as? JSONDictionary else {
             return .failure(MammutAPIError.MappingError.invalidJSON)
         }
 
+        return map(json: json)
+    }
+
+    func map(json: JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
         guard
                 let id = json["id"] as? Int,
                 let username = json["username"] as? String,
