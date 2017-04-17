@@ -7,7 +7,11 @@ This is yet another attempt to create a `Swift` framework for [`Mastodon`][masto
 
 I decided to build this because I wanted to create a very specific `iOS` application and at the same time I decided that creating the building blocks for the client should be `OSS` so that everyone can benefit and contribute to it.
 
+<br/>
 
+🚧 The project is still a WIP. I'll be adding a `TODO` down on this file to keep track of what the `API` is capable ATM and thus be able to be used 🚧
+===
+<br/>
 
 # SwiftPackageManager
 
