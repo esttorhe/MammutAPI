@@ -10,14 +10,14 @@ import XCTest
 internal class AccountTests: XCTestCase {
     func test_sameAccounts_equal() {
         let date = Date()
-        let subject1 = makeAccount(createdAt: date)
-        let subject2 = makeAccount(createdAt: date)
+        let subject1 = AccountTests.makeAccount(createdAt: date)
+        let subject2 = AccountTests.makeAccount(createdAt: date)
         XCTAssertEqual(subject1, subject2)
     }
 
     func test_differentAccounts_notEqual() {
-        let subject1 = makeAccount(id: #line)
-        let subject2 = makeAccount(id: #line)
+        let subject1 = AccountTests.makeAccount(id: #line)
+        let subject2 = AccountTests.makeAccount(id: #line)
         XCTAssertNotEqual(subject1, subject2)
     }
 }
@@ -35,8 +35,8 @@ extension AccountTests {
 
 // MARK: - Internal helpers
 
-fileprivate extension AccountTests {
-    func makeAccount(id: Int = Int.min, createdAt: Date = Date()) -> Account {
+internal extension AccountTests {
+    static func makeAccount(id: Int = Int.min, createdAt: Date = Date()) -> Account {
         return Account(
                 id: id,
                 username: #file,
