@@ -19,12 +19,12 @@ matrix:
       script:
         - if find "${SWIFT_PM}" -maxdepth 0 -empty | grep -q .; then git clone https://github.com/apple/swift-package-manager; cd swift-package-manager && git checkout 58f859a && cd ../; swift-package-manager/Utilities/bootstrap; fi
         - ${SWIFT_PM_BIN}/debug/swift-build
-        - ${SWIFT_PM_BIN}/debug/swift-test
+        - ${SWIFT_PM_BIN}/debug/swift-test --parallel
     - os: osx
       osx_image: xcode8.3
       script:
         - swift build
-        - swift test
+        - swift test --parallel
 language: generic
 notifications:
     email:
