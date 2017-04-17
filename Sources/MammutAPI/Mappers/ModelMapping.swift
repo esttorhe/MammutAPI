@@ -49,5 +49,7 @@ extension NSError {
 }
 
 internal protocol ModelMapping {
-    func map<T>(data: Data) -> Result<T, MammutAPIError.MappingError>
+    associatedtype Model
+    typealias JSONDictionary = [String: Any]
+    func map(data: Data) -> Result<Model, MammutAPIError.MappingError>
 }
