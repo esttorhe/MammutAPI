@@ -52,4 +52,5 @@ internal protocol ModelMapping {
     associatedtype Model
     typealias JSONDictionary = [String: Any]
     func map(data: Data) -> Result<Model, MammutAPIError.MappingError>
+    func map(json: JSONDictionary) -> Result<Model, MammutAPIError.MappingError>
 }
