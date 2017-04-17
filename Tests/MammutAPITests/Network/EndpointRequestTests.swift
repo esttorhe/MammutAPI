@@ -237,7 +237,6 @@ extension EndpointRequestTests {
                 ("test_execute_callsCompletionHandle_failure", test_execute_callsCompletionHandle_failure),
                 ("test_execute_sendsCorrectURLToDataTaskCreation_noPath", test_execute_sendsCorrectURLToDataTaskCreation_noPath),
                 ("test_execute_sendsCorrectURLToDataTaskCreation_withPath", test_execute_sendsCorrectURLToDataTaskCreation_withPath),
-                ("test_execute_callsCompletionHandler", test_execute_callsCompletionHandler),
                 ("test_execute_callsCompletionHandleResponseNoData_failure", test_execute_callsCompletionHandleResponseNoData_failure),
                 ("test_execute_callsCompletionHandleNoResponse_failure", test_execute_callsCompletionHandleNoResponse_failure),
                 ("test_execute_callsCompletionHandle_responseWithInvalidStatusCode_failure", test_execute_callsCompletionHandle_responseWithInvalidStatusCode_failure)
