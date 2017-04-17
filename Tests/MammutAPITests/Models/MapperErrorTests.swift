@@ -34,9 +34,9 @@ internal class MapperErrorTests: XCTestCase {
     }
 
     func test_convertToNSError_setsCorrectErrorDomain() {
-        let expectedErrorDomain = "me.estebantorr.MammutAPI.MappingError"
+        let expectedErrorDomain = "es.estebantorr.MammutAPI.MappingError"
         let subject = MammutAPIError.MappingError.incompleteModel
-        let nsSubject = NSError(mappingError: subject)
+        let nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.domain, expectedErrorDomain)
     }
 
@@ -45,11 +45,11 @@ internal class MapperErrorTests: XCTestCase {
         var nsSubject: NSError
 
         subject = .incompleteModel
-        nsSubject = NSError(mappingError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.code, -1)
 
         subject = .invalidJSON
-        nsSubject = NSError(mappingError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.code, -2)
     }
 
@@ -58,11 +58,11 @@ internal class MapperErrorTests: XCTestCase {
         var nsSubject: NSError
 
         subject = .incompleteModel
-        nsSubject = NSError(mappingError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
 
         subject = .invalidJSON
-        nsSubject = NSError(mappingError: subject)
+        nsSubject = NSError(error: subject)
         XCTAssertEqual(nsSubject.localizedDescription, subject.description)
     }
 
