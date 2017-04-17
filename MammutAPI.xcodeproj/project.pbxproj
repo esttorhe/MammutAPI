@@ -26,7 +26,9 @@
 		CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AE183E794A1FD85F274 /* Fixture.swift */; };
 		CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
+		CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53C06A02FC5A839D9911E /* Account.json */; };
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
+		CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53EB6959D0311677F12FB /* IncompleteJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +65,9 @@
 		CCF538A40C31359FB3433F97 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
 		CCF53AE183E794A1FD85F274 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
+		CCF53C06A02FC5A839D9911E /* Account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account.json; sourceTree = "<group>"; };
 		CCF53CA190FF5B70586ABD59 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
+		CCF53EB6959D0311677F12FB /* IncompleteJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,11 +231,21 @@
 			);
 			sourceTree = "<group>";
 		};
+		CCF53ABB1E8CEA7FA02FA331 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				CCF53C06A02FC5A839D9911E /* Account.json */,
+				CCF53EB6959D0311677F12FB /* IncompleteJSON.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		CCF53E6781B5638FB97E995F /* Internal */ = {
 			isa = PBXGroup;
 			children = (
 				CCF533C630254DBF6165A4A7 /* ResultTests.swift */,
 				CCF53AE183E794A1FD85F274 /* Fixture.swift */,
+				CCF53ABB1E8CEA7FA02FA331 /* Fixtures */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -317,6 +331,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */,
+				CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
