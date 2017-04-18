@@ -21,8 +21,8 @@
 		88A3F7DE1EA278E400B92F8E /* EndpointRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */; };
 		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
 		CCF5309720BDECA73164F155 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */; };
+		CCF530B828BC781B99E551D8 /* ApplicationMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53798527FB1FCB214EAA6 /* ApplicationMapperTests.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
-		CCF5334898435A463FEB5CBF /* ApplicationMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53798527FB1FCB214EAA6 /* ApplicationMapperTests.swift */; };
 		CCF53541EB2CBEC21ACC2D72 /* StatusVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */; };
 		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
 		CCF536C68992A23D3ADC74AA /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF535E7A2E2DE58EB936076 /* Status.swift */; };
@@ -446,6 +446,7 @@
 				CCF53A872DEF8FCFF5DF72F3 /* StatusTests.swift in Sources */,
 				CCF53975819BC857DA916878 /* NSError+ConvertibleTests.swift in Sources */,
 				CCF53F7EDDEE38516354F736 /* ApplicationTests.swift in Sources */,
+				CCF530B828BC781B99E551D8 /* ApplicationMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +470,6 @@
 				CCF539B2DD73A39EDB284A5C /* StatusMapper.swift in Sources */,
 				CCF53777AA105AB58239B0D7 /* NSError+Convertible.swift in Sources */,
 				CCF539A924420A2400DCF8A7 /* ApplicationMapper.swift in Sources */,
-				CCF5334898435A463FEB5CBF /* ApplicationMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
