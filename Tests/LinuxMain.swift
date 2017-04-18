@@ -17,6 +17,7 @@ XCTMain([
         // Mappers
         testCase(AccountMapperTests.allTests),
         testCase(StatusMapperTests.allTests),
+        testCase(ApplicationMapperTests.allTests),
         // Models
         testCase(AccountTests.allTests),
         testCase(StatusTests.allTests),
