@@ -5,28 +5,18 @@
 
 import Foundation
 
-public class Application {
+public struct Application {
     let name: String
     let website: String?
-    let redirectURI: String
-    let identifier: Int
-    let clientId: String
-    let clientSecret: String
+}
 
-    init
-    (
-            name: String,
-            website: String? = nil,
-            redirectURI: String,
-            identifier: Int,
-            clientId: String,
-            clientSecret: String
-    ) {
-        self.name = name
-        self.website = website
-        self.redirectURI = redirectURI
-        self.identifier = identifier
-        self.clientId = clientId
-        self.clientSecret = clientSecret
+// MARK: - Equatable
+
+extension Application: Equatable {
+    public static func ==(lhs: Application, rhs: Application) -> Bool {
+        return (
+                lhs.name == rhs.name &&
+                lhs.website == rhs.website
+        )
     }
 }

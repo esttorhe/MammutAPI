@@ -19,6 +19,7 @@ XCTMain([
         testCase(StatusMapperTests.allTests),
         // Models
         testCase(AccountTests.allTests),
-        testCase(StatusTests.allTests)
+        testCase(StatusTests.allTests),
+        testCase(ApplicationTests.allTests)
 ])
 #endif
