@@ -1,6 +1,7 @@
 matrix:
   include:
     - os: linux
+      language: generic
       env:
         - SWIFT_PATH=${PWD}/swift-3.1-RELEASE-ubuntu14.04
         - SWIFT_PM=${PWD}/swift-package-manager
@@ -21,12 +22,13 @@ matrix:
         - ${SWIFT_PM_BIN}/debug/swift-build
         - ${SWIFT_PM_BIN}/debug/swift-test --parallel
     - os: osx
+      language: swift
       osx_image: xcode8.3
       script:
-        - xcodebuild -scheme MammutAPI -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.1' build test
+        - xcodebuild -project MammutAPI.xcodeproj -scheme UnitTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=10.3' -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES build test
       after_success:
-        - bash <(curl -s https://codecov.io/bash)
-language: swift
+        - bash <(curl -s https://codecov.io/bash) -cF ios
+
 notifications:
     email:
       on_success: never
