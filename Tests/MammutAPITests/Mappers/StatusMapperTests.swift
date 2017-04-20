@@ -10,42 +10,42 @@ import XCTest
 internal class StatusMapperTests: XCTestCase {
     var subject: StatusMapper!
 
-    override func setUp() {
+    override func setUp()  {
         subject = StatusMapper()
     }
 
     // MARK: `data` mapping tests
-    func test_map_emptyData_failure_invalidJSON() {
+    func test_map_emptyData_failure_invalidJSON() throws {
         let result = subject.map(data: Data())
-        XCTAssertNotNil(result.error)
-        XCTAssertEqual(result.error!, MammutAPIError.MappingError.invalidJSON)
+        let error: MammutAPIError.MappingError = try AssertNotNilAndUnwrap(result.error)
+        XCTAssertEqual(error, MammutAPIError.MappingError.invalidJSON)
     }
 
-    func test_map_invalidData_failure_incompleteModel() {
-        let data = try? Fixture.loadData(from: "IncompleteJSON.json")
+    func test_map_invalidData_failure_incompleteModel() throws {
+        let data = try Fixture.loadData(from: "IncompleteJSON.json")
         XCTAssertNotNil(data)
-        let result = subject.map(data: data!)
-        XCTAssertNotNil(result.error)
+        let result = subject.map(data: data)
         XCTAssertNil(result.value)
-        XCTAssertEqual(result.error!, MammutAPIError.MappingError.incompleteModel)
+        let error: MammutAPIError.MappingError = try AssertNotNilAndUnwrap(result.error)
+        XCTAssertEqual(error, MammutAPIError.MappingError.incompleteModel)
     }
 
-    func test_map_validData_success() {
-        let data = try? Fixture.loadData(from: "Status.json")
+    func test_map_validData_success() throws {
+        let data = try Fixture.loadData(from: "Status.json")
         XCTAssertNotNil(data)
-        let result = subject.map(data: data!)
+        let result = subject.map(data: data)
         XCTAssertNil(result.error)
         XCTAssertNotNil(result.value)
     }
 
-    func test_map_validData_success_withExpectedValues() {
+    func test_map_validData_success_withExpectedValues() throws {
         let fileName = "Status.json"
-        let data = try? Fixture.loadData(from: fileName)
-        let expectedData = try? Fixture.loadJSON(from: fileName)
+        let data = try Fixture.loadData(from: fileName)
+        let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
-        let result = subject.map(data: data!)
+        let result = subject.map(data: data)
         if case .success(let account) = result {
-            XCTAssertEqual(account.id, expectedData!["id"] as! Int)
+            XCTAssertEqual(account.id, expectedData["id"] as! Int)
         } else {
             XCTFail("Should have returned a parsed «Status»")
         }
@@ -53,64 +53,66 @@ internal class StatusMapperTests: XCTestCase {
 
     // MARK: `json` mapping tests
 
-    func test_map_invalidJSON_failure_incompleteModel() {
-        let json = try? Fixture.loadJSON(from: "IncompleteJSON.json")
+    func test_map_invalidJSON_failure_incompleteModel() throws {
+        let json = try Fixture.loadJSON(from: "IncompleteJSON.json")
         XCTAssertNotNil(json)
-        let result = subject.map(json: json!)
-        XCTAssertNotNil(result.error)
+        let result = subject.map(json: json)
         XCTAssertNil(result.value)
-        XCTAssertEqual(result.error!, MammutAPIError.MappingError.incompleteModel)
+        let error: MammutAPIError.MappingError = try AssertNotNilAndUnwrap(result.error)
+        XCTAssertEqual(error, MammutAPIError.MappingError.incompleteModel)
     }
 
-    func test_map_validJSON_success() {
-        let json = try? Fixture.loadJSON(from: "Status.json")
+    func test_map_validJSON_success() throws {
+        let json = try Fixture.loadJSON(from: "Status.json")
         XCTAssertNotNil(json)
-        let result = subject.map(json: json!)
+        let result = subject.map(json: json)
         XCTAssertNil(result.error)
         XCTAssertNotNil(result.value)
     }
 
-    func test_map_validJSON_success_withExpectedValues() {
+    func test_map_validJSON_success_withExpectedValues() throws {
         let fileName = "Status.json"
-        let json = try? Fixture.loadJSON(from: fileName)
-        let expectedData = try? Fixture.loadJSON(from: fileName)
+        let json = try Fixture.loadJSON(from: fileName)
+        let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
-        let result = subject.map(json: json!)
+        let result = subject.map(json: json)
         if case .success(let account) = result {
-            XCTAssertEqual(account.id, expectedData!["id"] as! Int)
+            XCTAssertEqual(account.id, expectedData["id"] as! Int)
         } else {
             XCTFail("Should have returned a parsed «Status»")
         }
     }
 
-    func test_mapData_mapJSON_producesSameModel() {
+    func test_mapData_mapJSON_producesSameModel() throws {
         let fileName = "Status.json"
-        let json = try? Fixture.loadJSON(from: fileName)
-        let data = try? Fixture.loadData(from: fileName)
+        let json = try Fixture.loadJSON(from: fileName)
+        let data = try Fixture.loadData(from: fileName)
         XCTAssertNotNil(json)
         XCTAssertNotNil(data)
 
-        let mappedFromJSON = subject.map(json: json!)
-        let mappedFromData = subject.map(data: data!)
-        XCTAssertNotNil(mappedFromData.value)
-        XCTAssertNotNil(mappedFromJSON.value)
-        XCTAssertEqual(mappedFromJSON.value!, mappedFromData.value!)
+        let mappedFromJSON = subject.map(json: json)
+        let mappedFromData = subject.map(data: data)
+        let statusFromJSON: Status = try AssertNotNilAndUnwrap(mappedFromJSON.value)
+        let statusFromData: Status = try AssertNotNilAndUnwrap(mappedFromData.value)
+        XCTAssertEqual(statusFromData, statusFromJSON)
     }
 
-    func test_map_jsonWithoutApplication_setsApplicationToNil() {
+    func test_map_jsonWithoutApplication_setsApplicationToNil() throws {
         let fileName = "Status.json"
-        let json = try? Fixture.loadJSON(from: fileName)
-        let result = subject.map(json: json!)
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
         XCTAssertNil(result.error)
-        XCTAssertNil(result.value!.application)
+        XCTAssertNil(status.application)
     }
 
-    func test_map_jsonWithApplication_setsApplicationToValidApplicationObject() {
+    func test_map_jsonWithApplication_setsApplicationToValidApplicationObject() throws {
         let fileName = "StatusWithApplication.json"
-        let json = try? Fixture.loadJSON(from: fileName)
-        let result = subject.map(json: json!)
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
         XCTAssertNil(result.error)
-        XCTAssertNotNil(result.value!.application)
+        XCTAssertNotNil(status.application)
     }
 }
 
