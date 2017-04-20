@@ -22,6 +22,7 @@
 		CCF5306AF77E6E9512B220AE /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53CA190FF5B70586ABD59 /* Timelines.swift */; };
 		CCF5309720BDECA73164F155 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */; };
 		CCF530B828BC781B99E551D8 /* ApplicationMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53798527FB1FCB214EAA6 /* ApplicationMapperTests.swift */; };
+		CCF530D274CA9EEAABFEF814 /* UnwrapAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53DE3B7C313BF38CB7494 /* UnwrapAssertion.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
 		CCF53541EB2CBEC21ACC2D72 /* StatusVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */; };
 		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
@@ -104,6 +105,7 @@
 		CCF53CA190FF5B70586ABD59 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
 		CCF53D6D7A500B9EFDF80E5E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CCF53D8519F38897D62FDA17 /* Status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Status.json; sourceTree = "<group>"; };
+		CCF53DE3B7C313BF38CB7494 /* UnwrapAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwrapAssertion.swift; sourceTree = "<group>"; };
 		CCF53E8CF6CB97C1222BF568 /* StatusWithApplication.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithApplication.json; sourceTree = "<group>"; };
 		CCF53EB6959D0311677F12FB /* IncompleteJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +278,7 @@
 			children = (
 				CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */,
 				CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */,
+				CCF53DE3B7C313BF38CB7494 /* UnwrapAssertion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				CCF53975819BC857DA916878 /* NSError+ConvertibleTests.swift in Sources */,
 				CCF53F7EDDEE38516354F736 /* ApplicationTests.swift in Sources */,
 				CCF530B828BC781B99E551D8 /* ApplicationMapperTests.swift in Sources */,
+				CCF530D274CA9EEAABFEF814 /* UnwrapAssertion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
