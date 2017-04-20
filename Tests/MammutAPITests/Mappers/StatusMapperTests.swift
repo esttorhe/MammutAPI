@@ -96,6 +96,22 @@ internal class StatusMapperTests: XCTestCase {
         XCTAssertNotNil(mappedFromJSON.value)
         XCTAssertEqual(mappedFromJSON.value!, mappedFromData.value!)
     }
+
+    func test_map_jsonWithoutApplication_setsApplicationToNil() {
+        let fileName = "Status.json"
+        let json = try? Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json!)
+        XCTAssertNil(result.error)
+        XCTAssertNil(result.value!.application)
+    }
+
+    func test_map_jsonWithApplication_setsApplicationToValidApplicationObject() {
+        let fileName = "StatusWithApplication.json"
+        let json = try? Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json!)
+        XCTAssertNil(result.error)
+        XCTAssertNotNil(result.value!.application)
+    }
 }
 
 // MARK: - Linux Support
@@ -110,7 +126,9 @@ extension StatusMapperTests {
                 ("test_map_invalidJSON_failure_incompleteModel", test_map_invalidJSON_failure_incompleteModel),
                 ("test_map_validJSON_success", test_map_validJSON_success),
                 ("test_map_validJSON_success_withExpectedValues", test_map_validJSON_success_withExpectedValues),
-                ("test_mapData_mapJSON_producesSameModel", test_mapData_mapJSON_producesSameModel)
+                ("test_mapData_mapJSON_producesSameModel", test_mapData_mapJSON_producesSameModel),
+                ("test_map_jsonWithoutApplication_setsApplicationToNil", test_map_jsonWithoutApplication_setsApplicationToNil),
+                ("test_map_jsonWithApplication_setsApplicationToValidApplicationObject", test_map_jsonWithApplication_setsApplicationToValidApplicationObject)
         ]
     }
 }

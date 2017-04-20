@@ -19,6 +19,7 @@ internal class StatusMapper: ModelMapping {
 
     func map(json: ModelMapping.JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
         let accountMapper = AccountMapper()
+        let applicationMapper = ApplicationMapper()
         guard
                 let id = json["id"] as? Int,
                 let createdAtString = json["created_at"] as? String,
@@ -44,7 +45,12 @@ internal class StatusMapper: ModelMapping {
         let inReplyToId = json["in_reply_to_id"] as? String
         let inReplyToAccountId = json["in_reply_to_account_id"] as? String
         let spoilerText = json["spoiler_test"] as? String
-        let application: Application? = nil // TODO: Parse this with an application mapper
+        var application: Application? = nil
+        if let applicationDict = json["application"] as? JSONDictionary,
+           case let .success(app) = applicationMapper.map(json: applicationDict) {
+            application = app
+        }
+
         let favourited = (json["favourited"] as? Bool) ?? false
         let reblogged = (json["reblogged"] as? Bool) ?? false
 

@@ -31,6 +31,7 @@
 		CCF536F17439254A3D7ADEBE /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF533C630254DBF6165A4A7 /* ResultTests.swift */; };
 		CCF53777AA105AB58239B0D7 /* NSError+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF536579F664DF30D8DB058 /* NSError+Convertible.swift */; };
 		CCF537CCA1EE3BD98F62B001 /* Status.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53D8519F38897D62FDA17 /* Status.json */; };
+		CCF537CDAB5295315FB7C416 /* StatusWithApplication.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53E8CF6CB97C1222BF568 /* StatusWithApplication.json */; };
 		CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AE183E794A1FD85F274 /* Fixture.swift */; };
 		CCF538B44F839AF271078B5D /* AccountMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */; };
 		CCF53975819BC857DA916878 /* NSError+ConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */; };
@@ -103,6 +104,7 @@
 		CCF53CA190FF5B70586ABD59 /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
 		CCF53D6D7A500B9EFDF80E5E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CCF53D8519F38897D62FDA17 /* Status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Status.json; sourceTree = "<group>"; };
+		CCF53E8CF6CB97C1222BF568 /* StatusWithApplication.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithApplication.json; sourceTree = "<group>"; };
 		CCF53EB6959D0311677F12FB /* IncompleteJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,6 +304,7 @@
 				CCF53EB6959D0311677F12FB /* IncompleteJSON.json */,
 				CCF53D8519F38897D62FDA17 /* Status.json */,
 				CCF538B0976A09D716B12565 /* Application.json */,
+				CCF53E8CF6CB97C1222BF568 /* StatusWithApplication.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */,
 				CCF537CCA1EE3BD98F62B001 /* Status.json in Resources */,
 				CCF53AA30685F539E274D2FC /* Application.json in Resources */,
+				CCF537CDAB5295315FB7C416 /* StatusWithApplication.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
