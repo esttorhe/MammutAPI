@@ -1,5 +1,5 @@
 //
-// Created by Esteban Torres on 18.04.17.
+// Created by Esteban Torres on 21.04.17.
 // Copyright (c) 2017 Esteban Torres. All rights reserved.
 //
 
@@ -7,11 +7,11 @@ import Foundation
 import XCTest
 @testable import MammutAPI
 
-internal class ApplicationMapperTests: XCTestCase {
-    var subject: ApplicationMapper!
+internal class MentionMapperTests: XCTestCase {
+    var subject: MentionMapper!
 
-    override func setUp()  {
-        subject = ApplicationMapper()
+    override func setUp() {
+        subject = MentionMapper()
     }
 
     // MARK: `data` mapping tests
@@ -31,7 +31,7 @@ internal class ApplicationMapperTests: XCTestCase {
     }
 
     func test_map_validData_success() throws {
-        let data = try Fixture.loadData(from: "Application.json")
+        let data = try Fixture.loadData(from: "Mention.json")
         XCTAssertNotNil(data)
         let result = subject.map(data: data)
         XCTAssertNil(result.error)
@@ -39,16 +39,16 @@ internal class ApplicationMapperTests: XCTestCase {
     }
 
     func test_map_validData_success_withExpectedValues() throws {
-        let fileName = "Application.json"
+        let fileName = "Mention.json"
         let data = try Fixture.loadData(from: fileName)
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(data: data)
-        if case .success(let application) = result {
-            XCTAssertEqual(application.name, expectedData["name"] as! String)
-            XCTAssertEqual(application.website, expectedData["website"] as? String)
+        if case .success(let account) = result {
+            XCTAssertEqual(account.id, expectedData["id"] as! Int)
+            XCTAssertEqual(account.url.absoluteString, expectedData["url"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Application»")
+            XCTFail("Should have returned a parsed «Mention»")
         }
     }
 
@@ -64,7 +64,7 @@ internal class ApplicationMapperTests: XCTestCase {
     }
 
     func test_map_validJSON_success() throws {
-        let json = try Fixture.loadJSON(from: "Application.json")
+        let json = try Fixture.loadJSON(from: "Mention.json")
         XCTAssertNotNil(json)
         let result = subject.map(json: json)
         XCTAssertNil(result.error)
@@ -72,21 +72,21 @@ internal class ApplicationMapperTests: XCTestCase {
     }
 
     func test_map_validJSON_success_withExpectedValues() throws {
-        let fileName = "Application.json"
+        let fileName = "Mention.json"
         let json = try Fixture.loadJSON(from: fileName)
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(json: json)
-        if case .success(let application) = result {
-            XCTAssertEqual(application.name, expectedData["name"] as! String)
-            XCTAssertEqual(application.website, expectedData["website"] as? String)
+        if case .success(let account) = result {
+            XCTAssertEqual(account.id, expectedData["id"] as! Int)
+            XCTAssertEqual(account.url.absoluteString, expectedData["url"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Application»")
+            XCTFail("Should have returned a parsed «Mention»")
         }
     }
 
     func test_mapData_mapJSON_producesSameModel() throws {
-        let fileName = "Application.json"
+        let fileName = "Mention.json"
         let json = try Fixture.loadJSON(from: fileName)
         let data = try Fixture.loadData(from: fileName)
         XCTAssertNotNil(json)
@@ -94,16 +94,16 @@ internal class ApplicationMapperTests: XCTestCase {
 
         let mappedFromJSON = subject.map(json: json)
         let mappedFromData = subject.map(data: data)
-        let applicationFromJSON: Application = try AssertNotNilAndUnwrap(mappedFromJSON.value)
-        let applicationFromData: Application = try AssertNotNilAndUnwrap(mappedFromData.value)
-        XCTAssertEqual(applicationFromData, applicationFromJSON)
+        let accountFromJSON: Mention = try AssertNotNilAndUnwrap(mappedFromJSON.value)
+        let accountFromData: Mention = try AssertNotNilAndUnwrap(mappedFromData.value)
+        XCTAssertEqual(accountFromData, accountFromJSON)
     }
 }
 
 // MARK: - Linux Support
 
-extension ApplicationMapperTests {
-    static var allTests: [(String, (ApplicationMapperTests) -> () throws -> Void)] {
+extension MentionMapperTests {
+    static var allTest: [(String, (MentionMapperTests) -> () throws -> Void)] {
         return [
                 ("test_map_emptyData_failure_invalidJSON", test_map_emptyData_failure_invalidJSON),
                 ("test_map_invalidData_failure_incompleteModel", test_map_invalidData_failure_incompleteModel),
