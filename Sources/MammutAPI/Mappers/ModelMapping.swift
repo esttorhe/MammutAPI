@@ -44,6 +44,7 @@ internal protocol ModelMapping {
     typealias JSONDictionary = [String: Any]
     func map(data: Data) -> Result<Model, MammutAPIError.MappingError>
     func map(json: JSONDictionary) -> Result<Model, MammutAPIError.MappingError>
+    func map(array: [JSONDictionary]) -> Result<[Model], MammutAPIError.MappingError>
 }
 
 extension ModelMapping {
@@ -55,4 +56,19 @@ extension ModelMapping {
 
         return map(json: json)
     }
+
+    func map(array: [JSONDictionary]) -> Result<[Model], MammutAPIError.MappingError> {
+        let mappedResult = array.flatMap{ map(json: $0) }.reduce(.success([])) {
+            (result: Result<[Model], MammutAPIError.MappingError>, element: Result<Model, MammutAPIError.MappingError>) -> Result<[Model], MammutAPIError.MappingError> in
+            if case var .success(array) = result,
+                    case let .success(mappedModel) = element {
+                array.append(mappedModel)
+                return .success(array)
+            }
+
+            return result
+        }
+        return mappedResult
+    }
+
 }
