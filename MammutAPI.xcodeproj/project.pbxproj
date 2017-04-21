@@ -38,6 +38,7 @@
 		CCF53804A77C7221FF8723B0 /* AttachmentMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53F2B0F5BCDFFE718CFD9 /* AttachmentMapperTests.swift */; };
 		CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AE183E794A1FD85F274 /* Fixture.swift */; };
 		CCF538B44F839AF271078B5D /* AccountMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */; };
+		CCF538E0561995C2B35666EA /* StatusWithAttachments.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */; };
 		CCF53975819BC857DA916878 /* NSError+ConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */; };
 		CCF539A924420A2400DCF8A7 /* ApplicationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53045BB45C42A7149813E /* ApplicationMapper.swift */; };
 		CCF539B2DD73A39EDB284A5C /* StatusMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53C7546ECE868F8917D84 /* StatusMapper.swift */; };
@@ -96,6 +97,7 @@
 		CCF535E7A2E2DE58EB936076 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		CCF536579F664DF30D8DB058 /* NSError+Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Convertible.swift"; sourceTree = "<group>"; };
 		CCF53675C8974365E0B70A49 /* ApplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
+		CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithAttachments.json; sourceTree = "<group>"; };
 		CCF53798527FB1FCB214EAA6 /* ApplicationMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationMapperTests.swift; sourceTree = "<group>"; };
 		CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapperTests.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				CCF538B0976A09D716B12565 /* Application.json */,
 				CCF53E8CF6CB97C1222BF568 /* StatusWithApplication.json */,
 				CCF53CF4F61AF421BD6C1D4D /* Attachment.json */,
+				CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				CCF53AA30685F539E274D2FC /* Application.json in Resources */,
 				CCF537CDAB5295315FB7C416 /* StatusWithApplication.json in Resources */,
 				CCF53F704FDF234D48809C38 /* Attachment.json in Resources */,
+				CCF538E0561995C2B35666EA /* StatusWithAttachments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

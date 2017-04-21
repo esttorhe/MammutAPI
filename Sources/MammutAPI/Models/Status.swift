@@ -15,7 +15,7 @@ public struct Status {
     let visibility: StatusVisibility
     let application: Application?
     let account: Account
-    let mediaAttachments: [String]
+    let mediaAttachments: [Attachment]
     let mentions: [String]
     let tags: [String]
     let uri: String
