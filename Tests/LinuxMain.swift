@@ -21,6 +21,7 @@ XCTMain([
         // Models
         testCase(AccountTests.allTests),
         testCase(StatusTests.allTests),
-        testCase(ApplicationTests.allTests)
+        testCase(ApplicationTests.allTests),
+        testCase(AttachmentTests.allTests)
 ])
 #endif
