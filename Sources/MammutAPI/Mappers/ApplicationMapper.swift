@@ -7,14 +7,6 @@ import Foundation
 
 internal class ApplicationMapper: ModelMapping {
     typealias Model = Application
-    func map(data: Data) -> Result<Model, MammutAPIError.MappingError> {
-        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
-              let json = jsonObject as? JSONDictionary else {
-            return .failure(MammutAPIError.MappingError.invalidJSON)
-        }
-
-        return map(json: json)
-    }
 
     func map(json: ModelMapping.JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
         guard let name = json["name"] as? String else {
