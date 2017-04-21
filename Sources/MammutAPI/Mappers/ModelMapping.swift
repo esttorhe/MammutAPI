@@ -45,3 +45,14 @@ internal protocol ModelMapping {
     func map(data: Data) -> Result<Model, MammutAPIError.MappingError>
     func map(json: JSONDictionary) -> Result<Model, MammutAPIError.MappingError>
 }
+
+extension ModelMapping {
+    func map(data: Data) -> Result<Model, MammutAPIError.MappingError> {
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+              let json = jsonObject as? JSONDictionary else {
+            return .failure(MammutAPIError.MappingError.invalidJSON)
+        }
+
+        return map(json: json)
+    }
+}

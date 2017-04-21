@@ -8,15 +8,6 @@ import Foundation
 internal class StatusMapper: ModelMapping {
     typealias Model = Status
 
-    func map(data: Data) -> Result<Model, MammutAPIError.MappingError> {
-        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
-              let json = jsonObject as? JSONDictionary else {
-            return .failure(MammutAPIError.MappingError.invalidJSON)
-        }
-
-        return map(json: json)
-    }
-
     func map(json: ModelMapping.JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
         let accountMapper = AccountMapper()
         let applicationMapper = ApplicationMapper()
