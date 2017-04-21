@@ -11,6 +11,7 @@ internal class StatusMapper: ModelMapping {
     func map(json: ModelMapping.JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
         let accountMapper = AccountMapper()
         let applicationMapper = ApplicationMapper()
+        let attachmentMapper = AttachmentMapper()
         guard
                 let id = json["id"] as? Int,
                 let createdAtString = json["created_at"] as? String,
@@ -20,7 +21,7 @@ internal class StatusMapper: ModelMapping {
                 let visibility = StatusVisibility(rawValue: visibilityText),
                 let accountDict = json["account"] as? [String: Any],
                 let account = accountMapper.map(json: accountDict).value,
-                let mediaAttachments = json["media_attachments"] as? [String],
+                let mediaAttachments = json["media_attachments"] as? [ModelMapping.JSONDictionary],
                 let mentions = json["mentions"] as? [String],
                 let tags = json["tags"] as? [String],
                 let uri = json["uri"] as? String,
@@ -44,6 +45,10 @@ internal class StatusMapper: ModelMapping {
 
         let favourited = (json["favourited"] as? Bool) ?? false
         let reblogged = (json["reblogged"] as? Bool) ?? false
+        var attachments: [Attachment] = []
+        if case let .success(mAttachments) = attachmentMapper.map(array: mediaAttachments) {
+            attachments = mAttachments
+        }
 
         let status = Status(
                 id: id,
@@ -55,7 +60,7 @@ internal class StatusMapper: ModelMapping {
                 visibility: visibility,
                 application: application,
                 account: account,
-                mediaAttachments: mediaAttachments,
+                mediaAttachments: attachments,
                 mentions: mentions,
                 tags: tags,
                 uri: uri,

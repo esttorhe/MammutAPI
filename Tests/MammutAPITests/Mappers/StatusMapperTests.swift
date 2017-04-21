@@ -114,6 +114,15 @@ internal class StatusMapperTests: XCTestCase {
         XCTAssertNil(result.error)
         XCTAssertNotNil(status.application)
     }
+
+    func test_map_jsonWithAttachments_setsAttachmentsToValidAttachmentsObjects() throws {
+        let fileName = "StatusWithAttachments.json"
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
+        XCTAssertNil(result.error)
+        XCTAssertGreaterThanOrEqual(status.mediaAttachments.count, 1)
+    }
 }
 
 // MARK: - Linux Support
@@ -130,7 +139,8 @@ extension StatusMapperTests {
                 ("test_map_validJSON_success_withExpectedValues", test_map_validJSON_success_withExpectedValues),
                 ("test_mapData_mapJSON_producesSameModel", test_mapData_mapJSON_producesSameModel),
                 ("test_map_jsonWithoutApplication_setsApplicationToNil", test_map_jsonWithoutApplication_setsApplicationToNil),
-                ("test_map_jsonWithApplication_setsApplicationToValidApplicationObject", test_map_jsonWithApplication_setsApplicationToValidApplicationObject)
+                ("test_map_jsonWithApplication_setsApplicationToValidApplicationObject", test_map_jsonWithApplication_setsApplicationToValidApplicationObject),
+                ("test_map_jsonWithAttachments_setsAttachmentsToValidAttachmentsObjects", test_map_jsonWithAttachments_setsAttachmentsToValidAttachmentsObjects)
         ]
     }
 }
