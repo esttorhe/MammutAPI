@@ -39,6 +39,7 @@
 		CCF538492BC19C8C989BBDE2 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AE183E794A1FD85F274 /* Fixture.swift */; };
 		CCF538B44F839AF271078B5D /* AccountMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */; };
 		CCF538E0561995C2B35666EA /* StatusWithAttachments.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */; };
+		CCF53900D4C7EC81ACFF3E32 /* MentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5347B21B4535E62B6370A /* MentionTests.swift */; };
 		CCF53975819BC857DA916878 /* NSError+ConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */; };
 		CCF539A924420A2400DCF8A7 /* ApplicationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53045BB45C42A7149813E /* ApplicationMapper.swift */; };
 		CCF539B2DD73A39EDB284A5C /* StatusMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53C7546ECE868F8917D84 /* StatusMapper.swift */; };
@@ -49,6 +50,7 @@
 		CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53C06A02FC5A839D9911E /* Account.json */; };
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
 		CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */; };
+		CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B781C595EF54CCBA246 /* Mention.swift */; };
 		CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53552E6D8D06FA42881B9 /* Attachment.swift */; };
 		CCF53E849B74D422A1BA268F /* AccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */; };
 		CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53EB6959D0311677F12FB /* IncompleteJSON.json */; };
@@ -91,6 +93,7 @@
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
 		CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusVisibility.swift; sourceTree = "<group>"; };
+		CCF5347B21B4535E62B6370A /* MentionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionTests.swift; sourceTree = "<group>"; };
 		CCF534CBF69198DD0BEF4034 /* AttachmentMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentMapper.swift; sourceTree = "<group>"; };
 		CCF534D8C9BC33D4C40C510C /* NetworkErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
 		CCF53552E6D8D06FA42881B9 /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
 		CCF53B2DEC0094DF81956C6A /* StatusMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapperTests.swift; sourceTree = "<group>"; };
 		CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapper.swift; sourceTree = "<group>"; };
+		CCF53B781C595EF54CCBA246 /* Mention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mention.swift; sourceTree = "<group>"; };
 		CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+ConvertibleTests.swift"; sourceTree = "<group>"; };
 		CCF53C06A02FC5A839D9911E /* Account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account.json; sourceTree = "<group>"; };
 		CCF53C7546ECE868F8917D84 /* StatusMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapper.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */,
 				CCF53D6D7A500B9EFDF80E5E /* Account.swift */,
 				CCF53552E6D8D06FA42881B9 /* Attachment.swift */,
+				CCF53B781C595EF54CCBA246 /* Mention.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				CCF53252BCF40A0E94A93D40 /* StatusTests.swift */,
 				CCF53675C8974365E0B70A49 /* ApplicationTests.swift */,
 				CCF53DEFE05CBCA25E011E8C /* AttachmentTests.swift */,
+				CCF5347B21B4535E62B6370A /* MentionTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				CCF530D274CA9EEAABFEF814 /* UnwrapAssertion.swift in Sources */,
 				CCF531060EA0B57A562D19D3 /* AttachmentTests.swift in Sources */,
 				CCF53804A77C7221FF8723B0 /* AttachmentMapperTests.swift in Sources */,
+				CCF53900D4C7EC81ACFF3E32 /* MentionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +509,7 @@
 				CCF539A924420A2400DCF8A7 /* ApplicationMapper.swift in Sources */,
 				CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */,
 				CCF533CF356D547B3E77987E /* AttachmentMapper.swift in Sources */,
+				CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
