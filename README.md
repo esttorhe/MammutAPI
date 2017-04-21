@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/esttorhe/MammutAPI.svg?branch=master)](https://travis-ci.org/esttorhe/MammutAPI) ![](https://img.shields.io/badge/SwiftPackageManager-supported-orange.svg) ![](https://img.shields.io/badge/Linux-supported-blue.svg)
+[![Build Status](https://travis-ci.org/esttorhe/MammutAPI.svg?branch=master)](https://travis-ci.org/esttorhe/MammutAPI) ![](https://img.shields.io/badge/SwiftPackageManager-supported-orange.svg) ![](https://img.shields.io/badge/Linux-supported-blue.svg) [![codecov](https://codecov.io/gh/esttorhe/MammutAPI/branch/master/graph/badge.svg)](https://codecov.io/gh/esttorhe/MammutAPI)
 
 # MammutAPI
 🐘Mastodon's Unofficial Swift Framework
@@ -26,7 +26,9 @@ swift build
 swift test
 ```
 
+# Coverage
 
+![https://codecov.io/gh/esttorhe/MammutAPI](https://codecov.io/gh/esttorhe/MammutAPI/branch/master/graphs/sunburst.svg)
 
 
 
