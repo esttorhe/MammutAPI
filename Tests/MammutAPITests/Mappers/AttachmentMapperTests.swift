@@ -48,7 +48,7 @@ internal class AttachmentMapperTests: XCTestCase {
             XCTAssertEqual(account.id, expectedData["id"] as! Int)
             XCTAssertEqual(account.url.absoluteString, expectedData["url"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Status»")
+            XCTFail("Should have returned a parsed «Attachment»")
         }
     }
 
@@ -81,7 +81,7 @@ internal class AttachmentMapperTests: XCTestCase {
             XCTAssertEqual(account.id, expectedData["id"] as! Int)
             XCTAssertEqual(account.url.absoluteString, expectedData["url"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Status»")
+            XCTFail("Should have returned a parsed «Attachment»")
         }
     }
 

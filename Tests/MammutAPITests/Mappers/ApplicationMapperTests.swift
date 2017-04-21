@@ -48,7 +48,7 @@ internal class ApplicationMapperTests: XCTestCase {
             XCTAssertEqual(application.name, expectedData["name"] as! String)
             XCTAssertEqual(application.website, expectedData["website"] as? String)
         } else {
-            XCTFail("Should have returned a parsed «Status»")
+            XCTFail("Should have returned a parsed «Application»")
         }
     }
 
@@ -81,7 +81,7 @@ internal class ApplicationMapperTests: XCTestCase {
             XCTAssertEqual(application.name, expectedData["name"] as! String)
             XCTAssertEqual(application.website, expectedData["website"] as? String)
         } else {
-            XCTFail("Should have returned a parsed «Status»")
+            XCTFail("Should have returned a parsed «Application»")
         }
     }
 
