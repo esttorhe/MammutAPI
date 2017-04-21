@@ -4,5 +4,5 @@
   "type": "image",
   "url": "https://test.instance/file",
   "preview_url": "https://test.instance/file.png?1492486953",
-  "text_url": null
+  "text_url": "https://test.instance/textURL"
 }
