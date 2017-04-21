@@ -19,18 +19,6 @@ internal class MentionMapper: ModelMapping {
             return .failure(MammutAPIError.MappingError.incompleteModel)
         }
 
-        var remoteURL: URL? = nil
-        if let remoteURLString = json["remote_url"] as? String,
-           let url = URL(string: remoteURLString) {
-            remoteURL = url
-        }
-
-        var textURL: URL? = nil
-        if let textURLString = json["text_url"] as? String,
-                let url = URL(string: textURLString) {
-            textURL = url
-        }
-
         let mention = Mention(
                 id: id,
                 url: url,
