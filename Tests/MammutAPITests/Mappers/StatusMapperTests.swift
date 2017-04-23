@@ -44,8 +44,8 @@ internal class StatusMapperTests: XCTestCase {
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(data: data)
-        if case .success(let account) = result {
-            XCTAssertEqual(account.id, expectedData["id"] as! Int)
+        if case .success(let status) = result {
+            XCTAssertEqual(status.id, expectedData["id"] as! Int)
         } else {
             XCTFail("Should have returned a parsed «Status»")
         }
@@ -76,8 +76,8 @@ internal class StatusMapperTests: XCTestCase {
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(json: json)
-        if case .success(let account) = result {
-            XCTAssertEqual(account.id, expectedData["id"] as! Int)
+        if case .success(let status) = result {
+            XCTAssertEqual(status.id, expectedData["id"] as! Int)
         } else {
             XCTFail("Should have returned a parsed «Status»")
         }

@@ -44,9 +44,9 @@ internal class MentionMapperTests: XCTestCase {
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(data: data)
-        if case .success(let account) = result {
-            XCTAssertEqual(account.id, expectedData["id"] as! Int)
-            XCTAssertEqual(account.url.absoluteString, expectedData["url"] as! String)
+        if case .success(let mention) = result {
+            XCTAssertEqual(mention.id, expectedData["id"] as! Int)
+            XCTAssertEqual(mention.url.absoluteString, expectedData["url"] as! String)
         } else {
             XCTFail("Should have returned a parsed «Mention»")
         }
@@ -77,9 +77,9 @@ internal class MentionMapperTests: XCTestCase {
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(json: json)
-        if case .success(let account) = result {
-            XCTAssertEqual(account.id, expectedData["id"] as! Int)
-            XCTAssertEqual(account.url.absoluteString, expectedData["url"] as! String)
+        if case .success(let mention) = result {
+            XCTAssertEqual(mention.id, expectedData["id"] as! Int)
+            XCTAssertEqual(mention.url.absoluteString, expectedData["url"] as! String)
         } else {
             XCTFail("Should have returned a parsed «Mention»")
         }
@@ -94,9 +94,9 @@ internal class MentionMapperTests: XCTestCase {
 
         let mappedFromJSON = subject.map(json: json)
         let mappedFromData = subject.map(data: data)
-        let accountFromJSON: Mention = try AssertNotNilAndUnwrap(mappedFromJSON.value)
-        let accountFromData: Mention = try AssertNotNilAndUnwrap(mappedFromData.value)
-        XCTAssertEqual(accountFromData, accountFromJSON)
+        let mentionFromJSON: Mention = try AssertNotNilAndUnwrap(mappedFromJSON.value)
+        let mentionFromData: Mention = try AssertNotNilAndUnwrap(mappedFromData.value)
+        XCTAssertEqual(mentionFromData, mentionFromJSON)
     }
 }
 
