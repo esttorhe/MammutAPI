@@ -1,0 +1,57 @@
+{
+  "account": {
+    "acct": "testAccount@test.instance",
+    "avatar": "https://brandchecker.com/assets/img/websites/mastodon.png",
+    "avatar_static": "https://brandchecker.com/assets/img/websites/mastodon.png",
+    "created_at": "2017-04-06T06:15:34.583Z",
+    "display_name": "Test Account",
+    "followers_count": 3,
+    "following_count": 0,
+    "header": "https://thumbs.mic.com/Yzg4Njc2ZWMzNCMveVFQdVBVOGZrTjdhRmFuRDRycDc1UUtRcmpJPS8zOXgxOjEyMjl4NjIxLzgwMHg0NTAvZmlsdGVyczpmb3JtYXQoanBlZyk6cXVhbGl0eSg4MCkvaHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL3BvbGljeW1pYy1pbWFnZXMvaGUyMjRlZzMzZWh1aXg3d2VpendlZ3R3M2VoMWJnMXBlaThvY2tiM2N6d292YWlhb2JsMHlyeTZvbGczYzlleS5qcGc.jpg",
+    "header_static": "https://thumbs.mic.com/Yzg4Njc2ZWMzNCMveVFQdVBVOGZrTjdhRmFuRDRycDc1UUtRcmpJPS8zOXgxOjEyMjl4NjIxLzgwMHg0NTAvZmlsdGVyczpmb3JtYXQoanBlZyk6cXVhbGl0eSg4MCkvaHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL3BvbGljeW1pYy1pbWFnZXMvaGUyMjRlZzMzZWh1aXg3d2VpendlZ3R3M2VoMWJnMXBlaThvY2tiM2N6d292YWlhb2JsMHlyeTZvbGczYzlleS5qcGc.jpg",
+    "id": 0,
+    "locked": false,
+    "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "statuses_count": 148,
+    "url": "https://test.instance/@testAccount",
+    "username": "testAccount"
+  },
+  "application": null,
+  "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+  "created_at": "2017-04-16T20:20:57.000Z",
+  "favourited": null,
+  "favourites_count": 0,
+  "id": 0,
+  "in_reply_to_account_id": null,
+  "in_reply_to_id": null,
+  "media_attachments": [],
+  "mentions": [
+    {
+      "url": "https://test.instance/@user",
+      "acct": "user",
+      "id": 1,
+      "username": "username"
+    },
+    {
+      "url": "https://test.instance/@user",
+      "acct": "user",
+      "id": 2,
+      "username": "username"
+    },
+    {
+      "url": "https://test.instance/@user",
+      "acct": "user",
+      "id": 3,
+      "username": "username"
+    }
+  ],
+  "reblog": null,
+  "reblogged": null,
+  "reblogs_count": 0,
+  "sensitive": false,
+  "spoiler_text": "",
+  "tags": [],
+  "uri": "tag:test.instance,2017-04-16:objectId=2852827:objectType=Status",
+  "url": "https://test.instance/users/testAccount/updates/0",
+  "visibility": "public"
+}

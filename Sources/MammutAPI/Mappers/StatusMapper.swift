@@ -12,6 +12,7 @@ internal class StatusMapper: ModelMapping {
         let accountMapper = AccountMapper()
         let applicationMapper = ApplicationMapper()
         let attachmentMapper = AttachmentMapper()
+        let mentionMapper = MentionMapper()
         guard
                 let id = json["id"] as? Int,
                 let createdAtString = json["created_at"] as? String,
@@ -22,7 +23,7 @@ internal class StatusMapper: ModelMapping {
                 let accountDict = json["account"] as? [String: Any],
                 let account = accountMapper.map(json: accountDict).value,
                 let mediaAttachments = json["media_attachments"] as? [ModelMapping.JSONDictionary],
-                let mentions = json["mentions"] as? [String],
+                let mentions = json["mentions"] as? [ModelMapping.JSONDictionary],
                 let tags = json["tags"] as? [String],
                 let uri = json["uri"] as? String,
                 let content = json["content"] as? String,
@@ -49,6 +50,10 @@ internal class StatusMapper: ModelMapping {
         if case let .success(mAttachments) = attachmentMapper.map(array: mediaAttachments) {
             attachments = mAttachments
         }
+        var mappedMentions: [Mention] = []
+        if case let .success(mMentions) = mentionMapper.map(array: mentions) {
+            mappedMentions = mMentions
+        }
 
         let status = Status(
                 id: id,
@@ -61,7 +66,7 @@ internal class StatusMapper: ModelMapping {
                 application: application,
                 account: account,
                 mediaAttachments: attachments,
-                mentions: mentions,
+                mentions: mappedMentions,
                 tags: tags,
                 uri: uri,
                 content: content,
