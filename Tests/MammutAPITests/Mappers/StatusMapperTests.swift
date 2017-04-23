@@ -177,6 +177,24 @@ internal class StatusMapperTests: XCTestCase {
         XCTAssertNil(result.error)
         XCTAssertEqual(status.tags.count, 0)
     }
+
+    func test_map_jsonWithoutReblog_setsReblogToNil() throws {
+        let fileName = "Status.json"
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
+        XCTAssertNil(result.error)
+        XCTAssertNil(status.reblog)
+    }
+
+    func test_map_jsonWithReblog_setsReblogToValidStatusObject() throws {
+        let fileName = "StatusWithReblog.json"
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
+        XCTAssertNil(result.error)
+        XCTAssertNotNil(status.reblog)
+    }
 }
 
 // MARK: - Linux Support
@@ -200,7 +218,9 @@ extension StatusMapperTests {
                 ("test_map_jsonWithMentions_setsMentionsToValidMentionObjects", test_map_jsonWithMentions_setsMentionsToValidMentionObjects),
                 ("test_map_jsonWithoutMentions_setsMentionsToEmptyArray", test_map_jsonWithoutMentions_setsMentionsToEmptyArray),
                 ("test_map_jsonWithTags_setsTagsToValidTagObjects", test_map_jsonWithTags_setsTagsToValidTagObjects),
-                ("test_map_jsonWithoutTags_setsTagsToEmptyArray", test_map_jsonWithoutTags_setsTagsToEmptyArray)
+                ("test_map_jsonWithoutTags_setsTagsToEmptyArray", test_map_jsonWithoutTags_setsTagsToEmptyArray),
+                ("test_map_jsonWithoutReblog_setsReblogToNil", test_map_jsonWithoutReblog_setsReblogToNil),
+                ("test_map_jsonWithReblog_setsReblogToValidStatusObject", test_map_jsonWithReblog_setsReblogToValidStatusObject)
         ]
     }
 }
