@@ -6,7 +6,7 @@ Here's a list of the pending things to be covered by this framework (as well as 
  - [x] Account
  - [x] Application
  - [x] Attachment
- - [ ] Card
+ - [x] Card
  - [ ] Context
  - [ ] Error
  - [ ] Instance

@@ -28,6 +28,8 @@
 		CCF5333096F2160A55434789 /* StatusWithMentions.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF534E4E8D2DAC244A77031 /* StatusWithMentions.json */; };
 		CCF533A8E56F61BD3D378C95 /* StatusWithTags.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */; };
 		CCF533CF356D547B3E77987E /* AttachmentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534CBF69198DD0BEF4034 /* AttachmentMapper.swift */; };
+		CCF534B86E1E8978B1FC8E97 /* CardMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5381AECD657FC013239C4 /* CardMapperTests.swift */; };
+		CCF534B90D857AF4C9FE8EF5 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF537437667C22908F64314 /* CardTests.swift */; };
 		CCF53541EB2CBEC21ACC2D72 /* StatusVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */; };
 		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
 		CCF535ADB1FB3321699F78CD /* Tag.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF539491DDF7E09BF39288E /* Tag.json */; };
@@ -46,6 +48,7 @@
 		CCF538CD323EFFF4F9FC6099 /* TagMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53A4AC694BBC0C545651E /* TagMapper.swift */; };
 		CCF538E0561995C2B35666EA /* StatusWithAttachments.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */; };
 		CCF53900D4C7EC81ACFF3E32 /* MentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5347B21B4535E62B6370A /* MentionTests.swift */; };
+		CCF53944752B049B8237A90C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF533F437D503C77912F955 /* Card.swift */; };
 		CCF53946A0FC1D96028A5972 /* MentionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534D33A37AAC06A873CA9 /* MentionMapper.swift */; };
 		CCF53975819BC857DA916878 /* NSError+ConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */; };
 		CCF539A924420A2400DCF8A7 /* ApplicationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53045BB45C42A7149813E /* ApplicationMapper.swift */; };
@@ -59,6 +62,7 @@
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
 		CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */; };
 		CCF53C0512A810E3A0AA6F6D /* StatusWithReblog.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53AEE4B02375180214054 /* StatusWithReblog.json */; };
+		CCF53C2914EB1F1305FFF47A /* Card.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF5339701C7D15084E67F3E /* Card.json */; };
 		CCF53CE5DF431AB9CBF5F707 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BC889259A449FBE054A /* Tag.swift */; };
 		CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B781C595EF54CCBA246 /* Mention.swift */; };
 		CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53552E6D8D06FA42881B9 /* Attachment.swift */; };
@@ -66,6 +70,7 @@
 		CCF53EA974BD8860ED91950B /* StatusWithInvalidAttachments.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */; };
 		CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53EB6959D0311677F12FB /* IncompleteJSON.json */; };
 		CCF53EF8E8109DB99D3EF7D3 /* TagMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF532B54677075D6F822CAF /* TagMapperTests.swift */; };
+		CCF53F431A02E4C5CF44CFB1 /* CardMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF536C9716AE175B32C3903 /* CardMapper.swift */; };
 		CCF53F704FDF234D48809C38 /* Attachment.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53CF4F61AF421BD6C1D4D /* Attachment.json */; };
 		CCF53F778F9FEBB166E2C143 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53D6D7A500B9EFDF80E5E /* Account.swift */; };
 		CCF53F7EDDEE38516354F736 /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53675C8974365E0B70A49 /* ApplicationTests.swift */; };
@@ -105,8 +110,10 @@
 		CCF53252BCF40A0E94A93D40 /* StatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
 		CCF532B54677075D6F822CAF /* TagMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagMapperTests.swift; sourceTree = "<group>"; };
 		CCF5332D223C46D06C9A4DDF /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		CCF5339701C7D15084E67F3E /* Card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Card.json; sourceTree = "<group>"; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithInvalidAttachments.json; sourceTree = "<group>"; };
+		CCF533F437D503C77912F955 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
 		CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusVisibility.swift; sourceTree = "<group>"; };
 		CCF5347B21B4535E62B6370A /* MentionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionTests.swift; sourceTree = "<group>"; };
@@ -119,7 +126,10 @@
 		CCF536579F664DF30D8DB058 /* NSError+Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Convertible.swift"; sourceTree = "<group>"; };
 		CCF53675C8974365E0B70A49 /* ApplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
 		CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithAttachments.json; sourceTree = "<group>"; };
+		CCF536C9716AE175B32C3903 /* CardMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMapper.swift; sourceTree = "<group>"; };
+		CCF537437667C22908F64314 /* CardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		CCF53798527FB1FCB214EAA6 /* ApplicationMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationMapperTests.swift; sourceTree = "<group>"; };
+		CCF5381AECD657FC013239C4 /* CardMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMapperTests.swift; sourceTree = "<group>"; };
 		CCF538609FD82B5D13C3B8F6 /* AccountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		CCF53896AF1800526FED47D4 /* AccountMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapperTests.swift; sourceTree = "<group>"; };
 		CCF538A40C31359FB3433F97 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
@@ -210,6 +220,7 @@
 				CCF53552E6D8D06FA42881B9 /* Attachment.swift */,
 				CCF53B781C595EF54CCBA246 /* Mention.swift */,
 				CCF53BC889259A449FBE054A /* Tag.swift */,
+				CCF533F437D503C77912F955 /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 				CCF534CBF69198DD0BEF4034 /* AttachmentMapper.swift */,
 				CCF534D33A37AAC06A873CA9 /* MentionMapper.swift */,
 				CCF53A4AC694BBC0C545651E /* TagMapper.swift */,
+				CCF536C9716AE175B32C3903 /* CardMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -309,6 +321,7 @@
 				CCF53DEFE05CBCA25E011E8C /* AttachmentTests.swift */,
 				CCF5347B21B4535E62B6370A /* MentionTests.swift */,
 				CCF5332D223C46D06C9A4DDF /* TagTests.swift */,
+				CCF537437667C22908F64314 /* CardTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,6 +378,7 @@
 				CCF539491DDF7E09BF39288E /* Tag.json */,
 				CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */,
 				CCF53AEE4B02375180214054 /* StatusWithReblog.json */,
+				CCF5339701C7D15084E67F3E /* Card.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -389,6 +403,7 @@
 				CCF53F2B0F5BCDFFE718CFD9 /* AttachmentMapperTests.swift */,
 				CCF53F2E3C49D281A3ECBBF0 /* MentionMapperTests.swift */,
 				CCF532B54677075D6F822CAF /* TagMapperTests.swift */,
+				CCF5381AECD657FC013239C4 /* CardMapperTests.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -487,6 +502,7 @@
 				CCF535ADB1FB3321699F78CD /* Tag.json in Resources */,
 				CCF533A8E56F61BD3D378C95 /* StatusWithTags.json in Resources */,
 				CCF53C0512A810E3A0AA6F6D /* StatusWithReblog.json in Resources */,
+				CCF53C2914EB1F1305FFF47A /* Card.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +545,8 @@
 				CCF5375831A144B2E454FCAB /* MentionMapperTests.swift in Sources */,
 				CCF53A8F092523A33A7FAE7F /* TagTests.swift in Sources */,
 				CCF53EF8E8109DB99D3EF7D3 /* TagMapperTests.swift in Sources */,
+				CCF534B90D857AF4C9FE8EF5 /* CardTests.swift in Sources */,
+				CCF534B86E1E8978B1FC8E97 /* CardMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +576,8 @@
 				CCF53946A0FC1D96028A5972 /* MentionMapper.swift in Sources */,
 				CCF53CE5DF431AB9CBF5F707 /* Tag.swift in Sources */,
 				CCF538CD323EFFF4F9FC6099 /* TagMapper.swift in Sources */,
+				CCF53944752B049B8237A90C /* Card.swift in Sources */,
+				CCF53F431A02E4C5CF44CFB1 /* CardMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,13 @@ import XCTest
 @testable import MammutAPI
 
 internal class TagTests: XCTestCase {
-    func test_sameMentions_equal() {
+    func test_sameTags_equal() {
         let subject1 = TagTests.makeTag()
         let subject2 = TagTests.makeTag()
         XCTAssertEqual(subject1, subject2)
     }
 
-    func test_differentMentions_notEqual() {
+    func test_differentTags_notEqual() {
         let subject1 = TagTests.makeTag(name: #function + #file)
         let subject2 = TagTests.makeTag(name: #file + #function)
         XCTAssertNotEqual(subject1, subject2)
@@ -26,8 +26,8 @@ internal class TagTests: XCTestCase {
 extension TagTests {
     static var allTests: [(String, (TagTests) -> () throws -> Void)] {
         return [
-                ("test_sameMentions_equal", test_sameMentions_equal),
-                ("test_differentMentions_notEqual", test_differentMentions_notEqual)
+                ("test_sameTags_equal", test_sameTags_equal),
+                ("test_differentTags_notEqual", test_differentTags_notEqual)
         ]
     }
 }
