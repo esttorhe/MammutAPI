@@ -10,10 +10,6 @@ internal class StatusMapper: ModelMapping {
 
     func map(json: ModelMapping.JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
         let accountMapper = AccountMapper()
-        let applicationMapper = ApplicationMapper()
-        let attachmentMapper = AttachmentMapper()
-        let mentionMapper = MentionMapper()
-        let tagMapper = TagMapper()
         guard
                 let id = json["id"] as? Int,
                 let createdAtString = json["created_at"] as? String,
@@ -36,6 +32,12 @@ internal class StatusMapper: ModelMapping {
             return .failure(MammutAPIError.MappingError.incompleteModel)
         }
 
+        let applicationMapper = ApplicationMapper()
+        let attachmentMapper = AttachmentMapper()
+        let mentionMapper = MentionMapper()
+        let tagMapper = TagMapper()
+        let statusMapper = StatusMapper()
+
         let inReplyToId = json["in_reply_to_id"] as? String
         let inReplyToAccountId = json["in_reply_to_account_id"] as? String
         let spoilerText = json["spoiler_test"] as? String
@@ -47,6 +49,13 @@ internal class StatusMapper: ModelMapping {
 
         let favourited = (json["favourited"] as? Bool) ?? false
         let reblogged = (json["reblogged"] as? Bool) ?? false
+
+        var reblog: Status? = nil
+        if let reblogDictionary = json["reblog"] as? ModelMapping.JSONDictionary,
+            case let .success(mReblog) = statusMapper.map(json: reblogDictionary) {
+            reblog = mReblog
+        }
+
         var attachments: [Attachment] = []
         if case let .success(mAttachments) = attachmentMapper.map(array: mediaAttachments) {
             attachments = mAttachments
@@ -79,6 +88,7 @@ internal class StatusMapper: ModelMapping {
                 url: url,
                 reblogsCount: reblogsCount,
                 favouritesCount: favouritesCount,
+                reblog: reblog,
                 favourited: favourited,
                 reblogged: reblogged
         )
