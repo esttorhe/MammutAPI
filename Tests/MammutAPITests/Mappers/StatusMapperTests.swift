@@ -133,6 +133,15 @@ internal class StatusMapperTests: XCTestCase {
         XCTAssertEqual(status.mediaAttachments.count, 0)
     }
 
+    func test_map_jsonWith1InvalidAnd2ValidAttachments_setsAttachmentsToArrayOf2() throws {
+        let fileName = "StatusWithInvalidAttachments.json"
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
+        XCTAssertNil(result.error)
+        XCTAssertEqual(status.mediaAttachments.count, 2)
+    }
+
     func test_map_jsonWithMentions_setsMentionsToValidMentionObjects() throws {
         let fileName = "StatusWithMentions.json"
         let json = try Fixture.loadJSON(from: fileName)
@@ -169,6 +178,7 @@ extension StatusMapperTests {
                 ("test_map_jsonWithApplication_setsApplicationToValidApplicationObject", test_map_jsonWithApplication_setsApplicationToValidApplicationObject),
                 ("test_map_jsonWithAttachments_setsAttachmentsToValidAttachmentsObjects", test_map_jsonWithAttachments_setsAttachmentsToValidAttachmentsObjects),
                 ("test_map_jsonWithoutAttachments_setsAttachmentsToEmptyArray", test_map_jsonWithoutAttachments_setsAttachmentsToEmptyArray),
+                ("test_map_jsonWith1InvalidAnd2ValidAttachments_setsAttachmentsToArrayOf2", test_map_jsonWith1InvalidAnd2ValidAttachments_setsAttachmentsToArrayOf2),
                 ("test_map_jsonWithMentions_setsMentionsToValidMentionObjects", test_map_jsonWithMentions_setsMentionsToValidMentionObjects),
                 ("test_map_jsonWithoutMentions_setsMentionsToEmptyArray", test_map_jsonWithoutMentions_setsMentionsToEmptyArray)
         ]

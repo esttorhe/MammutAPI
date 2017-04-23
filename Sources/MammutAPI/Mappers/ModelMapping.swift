@@ -70,5 +70,4 @@ extension ModelMapping {
         }
         return mappedResult
     }
-
 }

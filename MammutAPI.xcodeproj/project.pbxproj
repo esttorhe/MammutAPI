@@ -57,6 +57,7 @@
 		CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B781C595EF54CCBA246 /* Mention.swift */; };
 		CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53552E6D8D06FA42881B9 /* Attachment.swift */; };
 		CCF53E849B74D422A1BA268F /* AccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */; };
+		CCF53EA974BD8860ED91950B /* StatusWithInvalidAttachments.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */; };
 		CCF53EF210F571773E170A18 /* IncompleteJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53EB6959D0311677F12FB /* IncompleteJSON.json */; };
 		CCF53F704FDF234D48809C38 /* Attachment.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53CF4F61AF421BD6C1D4D /* Attachment.json */; };
 		CCF53F778F9FEBB166E2C143 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53D6D7A500B9EFDF80E5E /* Account.swift */; };
@@ -95,6 +96,7 @@
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF53252BCF40A0E94A93D40 /* StatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
+		CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithInvalidAttachments.json; sourceTree = "<group>"; };
 		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
 		CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusVisibility.swift; sourceTree = "<group>"; };
 		CCF5347B21B4535E62B6370A /* MentionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionTests.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				CCF53684D1FDFBA97DF929A8 /* StatusWithAttachments.json */,
 				CCF53FEAE8D9648E432644F4 /* Mention.json */,
 				CCF534E4E8D2DAC244A77031 /* StatusWithMentions.json */,
+				CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				CCF538E0561995C2B35666EA /* StatusWithAttachments.json in Resources */,
 				CCF5381230A683C62728D744 /* Mention.json in Resources */,
 				CCF5333096F2160A55434789 /* StatusWithMentions.json in Resources */,
+				CCF53EA974BD8860ED91950B /* StatusWithInvalidAttachments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
