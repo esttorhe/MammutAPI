@@ -30,6 +30,9 @@ swift test
 
 ![https://codecov.io/gh/esttorhe/MammutAPI](https://codecov.io/gh/esttorhe/MammutAPI/branch/master/graphs/sunburst.svg)
 
+# TODO
 
+There's a [`TODO`][todo] file detailing what endpoints and methods are already covered by this framework
 
 [mastodon]:https://mastodon.social
+[todo]:TODO.md

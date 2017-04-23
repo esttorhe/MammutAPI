@@ -11,6 +11,7 @@
 *.md text
 LICENSE text
 AUTHORS text
+TODO text
 
 # Ignoring files for file types on the repo
 MammutAPI.h linguist-vendored
