@@ -5,5 +5,22 @@
 
 import Foundation
 
-internal class TagMapper {
+internal class TagMapper: ModelMapping {
+    typealias Model = Tag
+
+    func map(json: ModelMapping.JSONDictionary) -> Result<Model, MammutAPIError.MappingError> {
+        guard
+                let name = json["name"] as? String,
+                let urlString = json["url"] as? String,
+                let url = URL(string: urlString)
+                else {
+            return .failure(MammutAPIError.MappingError.incompleteModel)
+        }
+
+        let mention = Tag(
+                name: name,
+                url: url
+        )
+        return .success(mention)
+    }
 }
