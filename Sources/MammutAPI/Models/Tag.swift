@@ -6,4 +6,17 @@
 import Foundation
 
 public struct Tag {
+    let name: String
+    let url: URL
+}
+
+// MARK: - Equatable
+
+extension Tag: Equatable {
+    public static func ==(lhs: Tag, rhs: Tag) -> Bool {
+        return (
+                lhs.name == rhs.name &&
+                lhs.url == rhs.url
+        )
+    }
 }
