@@ -62,6 +62,7 @@
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
 		CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */; };
 		CCF53C0512A810E3A0AA6F6D /* StatusWithReblog.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53AEE4B02375180214054 /* StatusWithReblog.json */; };
+		CCF53C2914EB1F1305FFF47A /* Card.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF5339701C7D15084E67F3E /* Card.json */; };
 		CCF53CE5DF431AB9CBF5F707 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BC889259A449FBE054A /* Tag.swift */; };
 		CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B781C595EF54CCBA246 /* Mention.swift */; };
 		CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53552E6D8D06FA42881B9 /* Attachment.swift */; };
@@ -109,6 +110,7 @@
 		CCF53252BCF40A0E94A93D40 /* StatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
 		CCF532B54677075D6F822CAF /* TagMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagMapperTests.swift; sourceTree = "<group>"; };
 		CCF5332D223C46D06C9A4DDF /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		CCF5339701C7D15084E67F3E /* Card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Card.json; sourceTree = "<group>"; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithInvalidAttachments.json; sourceTree = "<group>"; };
 		CCF533F437D503C77912F955 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				CCF539491DDF7E09BF39288E /* Tag.json */,
 				CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */,
 				CCF53AEE4B02375180214054 /* StatusWithReblog.json */,
+				CCF5339701C7D15084E67F3E /* Card.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				CCF535ADB1FB3321699F78CD /* Tag.json in Resources */,
 				CCF533A8E56F61BD3D378C95 /* StatusWithTags.json in Resources */,
 				CCF53C0512A810E3A0AA6F6D /* StatusWithReblog.json in Resources */,
+				CCF53C2914EB1F1305FFF47A /* Card.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
