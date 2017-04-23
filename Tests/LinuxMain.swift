@@ -27,6 +27,7 @@ XCTMain([
         testCase(ApplicationTests.allTests),
         testCase(AttachmentTests.allTests),
         testCase(MentionTests.allTests),
-        testCase(TagTests.allTests)
+        testCase(TagTests.allTests),
+        testCase(CardTests.allTests)
 ])
 #endif
