@@ -5,5 +5,17 @@
 
 import Foundation
 
-public class Card {
+public struct Card {
+    let url: URL
+    let title: String
+    let description: String
+    let image: URL?
+}
+
+// MARK: - Equatable
+
+extension Card: Equatable {
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.url == rhs.url
+    }
 }
