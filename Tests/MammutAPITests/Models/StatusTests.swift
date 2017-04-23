@@ -60,6 +60,7 @@ internal extension StatusTests {
                 url: URL(string: "www.example.com")!,
                 reblogsCount: 0,
                 favouritesCount: 0,
+                reblog: nil,
                 favourited: true,
                 reblogged: false
         )

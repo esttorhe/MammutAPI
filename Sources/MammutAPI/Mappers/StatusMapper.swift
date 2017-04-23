@@ -79,6 +79,7 @@ internal class StatusMapper: ModelMapping {
                 url: url,
                 reblogsCount: reblogsCount,
                 favouritesCount: favouritesCount,
+                reblog: nil,
                 favourited: favourited,
                 reblogged: reblogged
         )
