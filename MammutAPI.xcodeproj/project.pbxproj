@@ -26,6 +26,7 @@
 		CCF531060EA0B57A562D19D3 /* AttachmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53DEFE05CBCA25E011E8C /* AttachmentTests.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
 		CCF5333096F2160A55434789 /* StatusWithMentions.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF534E4E8D2DAC244A77031 /* StatusWithMentions.json */; };
+		CCF533A8E56F61BD3D378C95 /* StatusWithTags.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */; };
 		CCF533CF356D547B3E77987E /* AttachmentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF534CBF69198DD0BEF4034 /* AttachmentMapper.swift */; };
 		CCF53541EB2CBEC21ACC2D72 /* StatusVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346D5994CCA8036DADF2 /* StatusVisibility.swift */; };
 		CCF535A6364DC3B0AE731DC1 /* Date+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */; };
@@ -97,6 +98,7 @@
 		88A3F7D71EA278E400B92F8E /* EndpointRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointRequestTests.swift; sourceTree = "<group>"; };
 		CCF53045BB45C42A7149813E /* ApplicationMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationMapper.swift; sourceTree = "<group>"; };
 		CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperErrorTests.swift; sourceTree = "<group>"; };
+		CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithTags.json; sourceTree = "<group>"; };
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF53252BCF40A0E94A93D40 /* StatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				CCF534E4E8D2DAC244A77031 /* StatusWithMentions.json */,
 				CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */,
 				CCF539491DDF7E09BF39288E /* Tag.json */,
+				CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				CCF5333096F2160A55434789 /* StatusWithMentions.json in Resources */,
 				CCF53EA974BD8860ED91950B /* StatusWithInvalidAttachments.json in Resources */,
 				CCF535ADB1FB3321699F78CD /* Tag.json in Resources */,
+				CCF533A8E56F61BD3D378C95 /* StatusWithTags.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

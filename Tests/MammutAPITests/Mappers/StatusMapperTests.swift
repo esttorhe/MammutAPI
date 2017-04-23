@@ -121,7 +121,7 @@ internal class StatusMapperTests: XCTestCase {
         let result = subject.map(json: json)
         let status: Status = try AssertNotNilAndUnwrap(result.value)
         XCTAssertNil(result.error)
-        XCTAssertGreaterThanOrEqual(status.mediaAttachments.count, 1)
+        XCTAssertGreaterThanOrEqual(status.mediaAttachments.count, 3)
     }
 
     func test_map_jsonWithoutAttachments_setsAttachmentsToEmptyArray() throws {
@@ -148,7 +148,7 @@ internal class StatusMapperTests: XCTestCase {
         let result = subject.map(json: json)
         let status: Status = try AssertNotNilAndUnwrap(result.value)
         XCTAssertNil(result.error)
-        XCTAssertGreaterThanOrEqual(status.mentions.count, 1)
+        XCTAssertGreaterThanOrEqual(status.mentions.count, 3)
     }
 
     func test_map_jsonWithoutMentions_setsMentionsToEmptyArray() throws {
@@ -158,6 +158,24 @@ internal class StatusMapperTests: XCTestCase {
         let status: Status = try AssertNotNilAndUnwrap(result.value)
         XCTAssertNil(result.error)
         XCTAssertEqual(status.mentions.count, 0)
+    }
+
+    func test_map_jsonWithTags_setsTagsToValidTagObjects() throws {
+        let fileName = "StatusWithTags.json"
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
+        XCTAssertNil(result.error)
+        XCTAssertGreaterThanOrEqual(status.tags.count, 3)
+    }
+
+    func test_map_jsonWithoutTags_setsTagsToEmptyArray() throws {
+        let fileName = "Status.json"
+        let json = try Fixture.loadJSON(from: fileName)
+        let result = subject.map(json: json)
+        let status: Status = try AssertNotNilAndUnwrap(result.value)
+        XCTAssertNil(result.error)
+        XCTAssertEqual(status.tags.count, 0)
     }
 }
 
@@ -180,7 +198,9 @@ extension StatusMapperTests {
                 ("test_map_jsonWithoutAttachments_setsAttachmentsToEmptyArray", test_map_jsonWithoutAttachments_setsAttachmentsToEmptyArray),
                 ("test_map_jsonWith1InvalidAnd2ValidAttachments_setsAttachmentsToArrayOf2", test_map_jsonWith1InvalidAnd2ValidAttachments_setsAttachmentsToArrayOf2),
                 ("test_map_jsonWithMentions_setsMentionsToValidMentionObjects", test_map_jsonWithMentions_setsMentionsToValidMentionObjects),
-                ("test_map_jsonWithoutMentions_setsMentionsToEmptyArray", test_map_jsonWithoutMentions_setsMentionsToEmptyArray)
+                ("test_map_jsonWithoutMentions_setsMentionsToEmptyArray", test_map_jsonWithoutMentions_setsMentionsToEmptyArray),
+                ("test_map_jsonWithTags_setsTagsToValidTagObjects", test_map_jsonWithTags_setsTagsToValidTagObjects),
+                ("test_map_jsonWithoutTags_setsTagsToEmptyArray", test_map_jsonWithoutTags_setsTagsToEmptyArray)
         ]
     }
 }
