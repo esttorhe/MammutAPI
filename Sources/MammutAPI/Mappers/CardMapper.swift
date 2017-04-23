@@ -23,7 +23,7 @@ internal class CardMapper: ModelMapping {
            let imageURL = URL(string: imageString) {
             image = imageURL
         }
-        
+
         let card = Card(
                 url: url,
                 title: title,
