@@ -21,6 +21,7 @@ XCTMain([
         testCase(AttachmentMapperTests.allTests),
         testCase(MentionMapperTests.allTest),
         testCase(TagMapperTests.allTests),
+        testCase(CardMapperTests.allTests),
         // Models
         testCase(AccountTests.allTests),
         testCase(StatusTests.allTests),
