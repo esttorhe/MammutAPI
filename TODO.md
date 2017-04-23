@@ -3,7 +3,7 @@
 Here's a list of the pending things to be covered by this framework (as well as marking what's already done)
 
 ## Entities
- - [ ] Account
+ - [x] Account
  - [x] Application
  - [x] Attachment
  - [ ] Card
@@ -15,7 +15,7 @@ Here's a list of the pending things to be covered by this framework (as well as 
  - [ ] Relationship
  - [ ] Results
  - [x] Status
- - [ ] Tag
+ - [x] Tag
 
 ## Endpoints
 - [ ] Accounts
