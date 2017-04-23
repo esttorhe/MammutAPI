@@ -49,11 +49,13 @@
 		CCF539B2DD73A39EDB284A5C /* StatusMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53C7546ECE868F8917D84 /* StatusMapper.swift */; };
 		CCF539E13724AF5186718F51 /* TimelinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */; };
 		CCF53A872DEF8FCFF5DF72F3 /* StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53252BCF40A0E94A93D40 /* StatusTests.swift */; };
+		CCF53A8F092523A33A7FAE7F /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5332D223C46D06C9A4DDF /* TagTests.swift */; };
 		CCF53AA30685F539E274D2FC /* Application.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF538B0976A09D716B12565 /* Application.json */; };
 		CCF53AB6329258F8C5DADA6A /* MammutAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF5324E07265187D130F304 /* MammutAPI.framework */; };
 		CCF53B9EDBD3AB5497C14A70 /* Account.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF53C06A02FC5A839D9911E /* Account.json */; };
 		CCF53BB33DC7296CB5AA72C4 /* MapperErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF530D0B62F9EEC4EF65762 /* MapperErrorTests.swift */; };
 		CCF53BEDDE887B98E18A75FE /* Date+MastodonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53915C00ED121CAC9F46C /* Date+MastodonTests.swift */; };
+		CCF53CE5DF431AB9CBF5F707 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BC889259A449FBE054A /* Tag.swift */; };
 		CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B781C595EF54CCBA246 /* Mention.swift */; };
 		CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53552E6D8D06FA42881B9 /* Attachment.swift */; };
 		CCF53E849B74D422A1BA268F /* AccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */; };
@@ -95,6 +97,7 @@
 		CCF5324E07265187D130F304 /* MammutAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MammutAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF532523107CE309D544695 /* MammutAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MammutAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF53252BCF40A0E94A93D40 /* StatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
+		CCF5332D223C46D06C9A4DDF /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		CCF533C630254DBF6165A4A7 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StatusWithInvalidAttachments.json; sourceTree = "<group>"; };
 		CCF5346211BD6A976E70D0DA /* Date+Mastodon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Mastodon.swift"; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		CCF53B2DEC0094DF81956C6A /* StatusMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapperTests.swift; sourceTree = "<group>"; };
 		CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapper.swift; sourceTree = "<group>"; };
 		CCF53B781C595EF54CCBA246 /* Mention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mention.swift; sourceTree = "<group>"; };
+		CCF53BC889259A449FBE054A /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+ConvertibleTests.swift"; sourceTree = "<group>"; };
 		CCF53C06A02FC5A839D9911E /* Account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account.json; sourceTree = "<group>"; };
 		CCF53C7546ECE868F8917D84 /* StatusMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapper.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				CCF53D6D7A500B9EFDF80E5E /* Account.swift */,
 				CCF53552E6D8D06FA42881B9 /* Attachment.swift */,
 				CCF53B781C595EF54CCBA246 /* Mention.swift */,
+				CCF53BC889259A449FBE054A /* Tag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				CCF53675C8974365E0B70A49 /* ApplicationTests.swift */,
 				CCF53DEFE05CBCA25E011E8C /* AttachmentTests.swift */,
 				CCF5347B21B4535E62B6370A /* MentionTests.swift */,
+				CCF5332D223C46D06C9A4DDF /* TagTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				CCF53804A77C7221FF8723B0 /* AttachmentMapperTests.swift in Sources */,
 				CCF53900D4C7EC81ACFF3E32 /* MentionTests.swift in Sources */,
 				CCF5375831A144B2E454FCAB /* MentionMapperTests.swift in Sources */,
+				CCF53A8F092523A33A7FAE7F /* TagTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +537,7 @@
 				CCF533CF356D547B3E77987E /* AttachmentMapper.swift in Sources */,
 				CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */,
 				CCF53946A0FC1D96028A5972 /* MentionMapper.swift in Sources */,
+				CCF53CE5DF431AB9CBF5F707 /* Tag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
