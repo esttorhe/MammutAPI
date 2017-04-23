@@ -11,6 +11,7 @@ let package = Package(
       ]
     }(),
     exclude: [
-      "Tests/Mocks"
+      "Tests/Mocks",
+      "TODO.md"
     ]
 )
