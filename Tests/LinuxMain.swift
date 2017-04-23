@@ -20,11 +20,13 @@ XCTMain([
         testCase(ApplicationMapperTests.allTests),
         testCase(AttachmentMapperTests.allTests),
         testCase(MentionMapperTests.allTest),
+        testCase(TagMapperTests.allTests),
         // Models
         testCase(AccountTests.allTests),
         testCase(StatusTests.allTests),
         testCase(ApplicationTests.allTests),
         testCase(AttachmentTests.allTests),
-        testCase(MentionTests.allTests)
+        testCase(MentionTests.allTests),
+        testCase(TagTests.allTests)
 ])
 #endif
