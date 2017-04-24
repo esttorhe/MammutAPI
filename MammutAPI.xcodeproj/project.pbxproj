@@ -24,6 +24,7 @@
 		CCF530B828BC781B99E551D8 /* ApplicationMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53798527FB1FCB214EAA6 /* ApplicationMapperTests.swift */; };
 		CCF530D274CA9EEAABFEF814 /* UnwrapAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53DE3B7C313BF38CB7494 /* UnwrapAssertion.swift */; };
 		CCF531060EA0B57A562D19D3 /* AttachmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53DEFE05CBCA25E011E8C /* AttachmentTests.swift */; };
+		CCF531982DD829097ED1DC09 /* InstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B59DE75B1CB167AFC05 /* InstanceTests.swift */; };
 		CCF531C1162114FA3837FAAD /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF538A40C31359FB3433F97 /* ModelMapping.swift */; };
 		CCF5333096F2160A55434789 /* StatusWithMentions.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF534E4E8D2DAC244A77031 /* StatusWithMentions.json */; };
 		CCF533A8E56F61BD3D378C95 /* StatusWithTags.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF531C23A1E36EAC44E69F0 /* StatusWithTags.json */; };
@@ -65,6 +66,7 @@
 		CCF53C2914EB1F1305FFF47A /* Card.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF5339701C7D15084E67F3E /* Card.json */; };
 		CCF53CE5DF431AB9CBF5F707 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53BC889259A449FBE054A /* Tag.swift */; };
 		CCF53D0FE7AFBDE01600F1C1 /* Mention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B781C595EF54CCBA246 /* Mention.swift */; };
+		CCF53E7079FCB64450EF50C9 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53F3BDC136A0086956F87 /* Instance.swift */; };
 		CCF53E75EA866A3629E6A508 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53552E6D8D06FA42881B9 /* Attachment.swift */; };
 		CCF53E849B74D422A1BA268F /* AccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */; };
 		CCF53EA974BD8860ED91950B /* StatusWithInvalidAttachments.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF533F3FDBA56ED8DF16AA6 /* StatusWithInvalidAttachments.json */; };
@@ -142,6 +144,7 @@
 		CCF53AF5E849AB1C56EC6406 /* TimelinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTests.swift; sourceTree = "<group>"; };
 		CCF53B2DEC0094DF81956C6A /* StatusMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMapperTests.swift; sourceTree = "<group>"; };
 		CCF53B4BE62D3B0330F59E44 /* AccountMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMapper.swift; sourceTree = "<group>"; };
+		CCF53B59DE75B1CB167AFC05 /* InstanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceTests.swift; sourceTree = "<group>"; };
 		CCF53B781C595EF54CCBA246 /* Mention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mention.swift; sourceTree = "<group>"; };
 		CCF53BC889259A449FBE054A /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		CCF53BFA6AF3045F7220982B /* NSError+ConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+ConvertibleTests.swift"; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		CCF53EB6959D0311677F12FB /* IncompleteJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteJSON.json; sourceTree = "<group>"; };
 		CCF53F2B0F5BCDFFE718CFD9 /* AttachmentMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentMapperTests.swift; sourceTree = "<group>"; };
 		CCF53F2E3C49D281A3ECBBF0 /* MentionMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionMapperTests.swift; sourceTree = "<group>"; };
+		CCF53F3BDC136A0086956F87 /* Instance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
 		CCF53FEAE8D9648E432644F4 /* Mention.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mention.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +225,7 @@
 				CCF53B781C595EF54CCBA246 /* Mention.swift */,
 				CCF53BC889259A449FBE054A /* Tag.swift */,
 				CCF533F437D503C77912F955 /* Card.swift */,
+				CCF53F3BDC136A0086956F87 /* Instance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				CCF5347B21B4535E62B6370A /* MentionTests.swift */,
 				CCF5332D223C46D06C9A4DDF /* TagTests.swift */,
 				CCF537437667C22908F64314 /* CardTests.swift */,
+				CCF53B59DE75B1CB167AFC05 /* InstanceTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 				CCF53EF8E8109DB99D3EF7D3 /* TagMapperTests.swift in Sources */,
 				CCF534B90D857AF4C9FE8EF5 /* CardTests.swift in Sources */,
 				CCF534B86E1E8978B1FC8E97 /* CardMapperTests.swift in Sources */,
+				CCF531982DD829097ED1DC09 /* InstanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +585,7 @@
 				CCF538CD323EFFF4F9FC6099 /* TagMapper.swift in Sources */,
 				CCF53944752B049B8237A90C /* Card.swift in Sources */,
 				CCF53F431A02E4C5CF44CFB1 /* CardMapper.swift in Sources */,
+				CCF53E7079FCB64450EF50C9 /* Instance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
