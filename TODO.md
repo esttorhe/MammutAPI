@@ -9,7 +9,7 @@ Here's a list of the pending things to be covered by this framework (as well as 
  - [x] Card
  - [ ] Context
  - [ ] Error
- - [ ] Instance
+ - [x] Instance
  - [x] Mention
  - [ ] Notification
  - [ ] Relationship

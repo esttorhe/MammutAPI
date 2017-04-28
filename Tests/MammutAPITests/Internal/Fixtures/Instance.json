@@ -1,0 +1,7 @@
+{
+  "uri": "test.instance",
+  "title": "Here should go the title of this instance",
+  "description": "<p>Imagine that here goes a pretty detailed description of the instance.</p>",
+  "email": "admin@testInstance.com",
+  "version": "Mastodon::Version"
+}

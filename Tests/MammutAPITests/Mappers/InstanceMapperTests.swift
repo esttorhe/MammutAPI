@@ -1,5 +1,5 @@
 //
-// Created by Esteban Torres on 23.04.17.
+// Created by Esteban Torres on 28.04.17.
 // Copyright (c) 2017 Esteban Torres. All rights reserved.
 //
 
@@ -7,11 +7,11 @@ import Foundation
 import XCTest
 @testable import MammutAPI
 
-class CardMapperTests: XCTestCase {
-    var subject: CardMapper!
+internal class InstanceMapperTests: XCTestCase {
+    var subject: InstanceMapper!
 
     override func setUp() {
-        subject = CardMapper()
+        subject = InstanceMapper()
     }
 
     // MARK: `data` mapping tests
@@ -31,7 +31,7 @@ class CardMapperTests: XCTestCase {
     }
 
     func test_map_validData_success() throws {
-        let data = try Fixture.loadData(from: "Card.json")
+        let data = try Fixture.loadData(from: "Instance.json")
         XCTAssertNotNil(data)
         let result = subject.map(data: data)
         XCTAssertNil(result.error)
@@ -39,16 +39,16 @@ class CardMapperTests: XCTestCase {
     }
 
     func test_map_validData_success_withExpectedValues() throws {
-        let fileName = "Card.json"
+        let fileName = "Instance.json"
         let data = try Fixture.loadData(from: fileName)
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(data: data)
         if case .success(let tag) = result {
             XCTAssertEqual(tag.title, expectedData["title"] as! String)
-            XCTAssertEqual(tag.url.absoluteString, expectedData["url"] as! String)
+            XCTAssertEqual(tag.uri, expectedData["uri"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Card»")
+            XCTFail("Should have returned a parsed «Instance»")
         }
     }
 
@@ -64,7 +64,7 @@ class CardMapperTests: XCTestCase {
     }
 
     func test_map_validJSON_success() throws {
-        let json = try Fixture.loadJSON(from: "Card.json")
+        let json = try Fixture.loadJSON(from: "Instance.json")
         XCTAssertNotNil(json)
         let result = subject.map(json: json)
         XCTAssertNil(result.error)
@@ -72,21 +72,21 @@ class CardMapperTests: XCTestCase {
     }
 
     func test_map_validJSON_success_withExpectedValues() throws {
-        let fileName = "Card.json"
+        let fileName = "Instance.json"
         let json = try Fixture.loadJSON(from: fileName)
         let expectedData = try Fixture.loadJSON(from: fileName)
         XCTAssertNotNil(expectedData)
         let result = subject.map(json: json)
         if case .success(let tag) = result {
             XCTAssertEqual(tag.title, expectedData["title"] as! String)
-            XCTAssertEqual(tag.url.absoluteString, expectedData["url"] as! String)
+            XCTAssertEqual(tag.uri, expectedData["uri"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Card»")
+            XCTFail("Should have returned a parsed «Instance»")
         }
     }
 
     func test_mapData_mapJSON_producesSameModel() throws {
-        let fileName = "Card.json"
+        let fileName = "Instance.json"
         let json = try Fixture.loadJSON(from: fileName)
         let data = try Fixture.loadData(from: fileName)
         XCTAssertNotNil(json)
@@ -94,16 +94,16 @@ class CardMapperTests: XCTestCase {
 
         let mappedFromJSON = subject.map(json: json)
         let mappedFromData = subject.map(data: data)
-        let tagFromJSON: Card = try AssertNotNilAndUnwrap(mappedFromJSON.value)
-        let tagFromData: Card = try AssertNotNilAndUnwrap(mappedFromData.value)
+        let tagFromJSON: Instance = try AssertNotNilAndUnwrap(mappedFromJSON.value)
+        let tagFromData: Instance = try AssertNotNilAndUnwrap(mappedFromData.value)
         XCTAssertEqual(tagFromData, tagFromJSON)
     }
 }
 
 // MARK: - Linux Support
 
-extension CardMapperTests {
-    static var allTests: [(String, (CardMapperTests) -> () throws -> Void)] {
+extension InstanceMapperTests {
+    static var allTests: [(String, (InstanceMapperTests) -> () throws -> Void)] {
         return [
                 ("test_map_emptyData_failure_invalidJSON", test_map_emptyData_failure_invalidJSON),
                 ("test_map_invalidData_failure_incompleteModel", test_map_invalidData_failure_incompleteModel),
