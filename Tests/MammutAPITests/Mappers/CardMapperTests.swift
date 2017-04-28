@@ -48,7 +48,7 @@ class CardMapperTests: XCTestCase {
             XCTAssertEqual(tag.title, expectedData["title"] as! String)
             XCTAssertEqual(tag.url.absoluteString, expectedData["url"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Mention»")
+            XCTFail("Should have returned a parsed «Card»")
         }
     }
 
@@ -81,7 +81,7 @@ class CardMapperTests: XCTestCase {
             XCTAssertEqual(tag.title, expectedData["title"] as! String)
             XCTAssertEqual(tag.url.absoluteString, expectedData["url"] as! String)
         } else {
-            XCTFail("Should have returned a parsed «Mention»")
+            XCTFail("Should have returned a parsed «Card»")
         }
     }
 
