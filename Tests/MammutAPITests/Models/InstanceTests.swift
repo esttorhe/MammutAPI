@@ -35,12 +35,13 @@ extension InstanceTests {
 // MARK: Test Helpers
 
 fileprivate extension InstanceTests {
-    static func makeInstance(uri: String = "www.example.com", title: String = #file, description: String = #file, email: String = #file) -> Instance {
+    static func makeInstance(uri: String = "www.example.com", title: String = #function, description: String = #file, email: String = #function, version: String = #function) -> Instance {
         return Instance(
                 uri: uri,
                 title: title,
                 description: description,
-                email: email
+                email: email,
+                version: version
         )
     }
 }

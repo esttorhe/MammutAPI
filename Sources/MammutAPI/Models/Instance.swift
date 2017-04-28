@@ -10,6 +10,7 @@ public struct Instance {
     let title: String
     let description: String
     let email: String
+    let version: String
 }
 
 // MARK: - Equatable
@@ -19,7 +20,8 @@ extension Instance: Equatable {
         return (
                 lhs.uri == rhs.uri &&
                 lhs.title == rhs.title &&
-                lhs.email == rhs.email
+                lhs.email == rhs.email &&
+                lhs.version == rhs.version
         )
     }
 }
