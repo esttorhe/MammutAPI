@@ -6,4 +6,20 @@
 import Foundation
 
 public struct Instance {
+    let uri: String
+    let title: String
+    let description: String
+    let email: String
+}
+
+// MARK: - Equatable
+
+extension Instance: Equatable {
+    public static func ==(lhs: Instance, rhs: Instance) -> Bool {
+        return (
+                lhs.uri == rhs.uri &&
+                lhs.title == rhs.title &&
+                lhs.email == rhs.email
+        )
+    }
 }
